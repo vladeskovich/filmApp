@@ -1,7 +1,7 @@
 const SET_COUNT = 'SET_COUNT';
 
 export const initialState = {
-  count: 2,
+  count: 0,
 };
 
 const appReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const appReducer = (state = initialState, action) => {
     case SET_COUNT:
       return {
         ...state,
-        count: state.count + 1,
+        count: state.count + 5,
       };
     default:
       return state;

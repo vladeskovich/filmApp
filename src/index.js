@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from 'components/App';
 import { Provider } from 'react-redux';
-import makeStore from './store/redux-store';
+import App from './components/App/App';
+import configureStore from './store/configureStore';
 import 'styles/index.scss';
+
+const store = configureStore();
 
 const render = () => {
   ReactDOM.render(
-    <Provider store={makeStore()}>
+    <Provider store={store}>
       <App/>
     </Provider>,
     document.getElementById('root'),
@@ -18,3 +20,5 @@ const render = () => {
 if (module.hot) {
   module.hot.accept(() => render());
 }
+
+render();

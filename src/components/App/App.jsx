@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader';
 import Test from '../Test';
 import styles from './App.scss';
 
@@ -8,4 +9,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default hot(module)(App);
