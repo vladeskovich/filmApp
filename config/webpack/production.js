@@ -1,11 +1,11 @@
+const { merge } = require('webpack-merge');
 const commonConfig = require('./common');
-const {merge} = require('webpack-merge');
 
 module.exports = merge(commonConfig, {
-    mode: 'production',
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-        },
+  mode: 'production',
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
     },
+  },
 });

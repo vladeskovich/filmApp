@@ -1,21 +1,21 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const alias = require('../alias')
+const alias = require('../alias');
 
 module.exports = {
   context: path.resolve(__dirname, '../../src'),
   entry: {
-    app: './index.js'
+    app: './index.js',
   },
   output: {
-    filename: `[name].js`,
-    path: path.resolve(__dirname, '../../build')
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../../build'),
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias
+    alias,
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -23,8 +23,8 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: `[name].css`
-    })
+      filename: '[name].css',
+    }),
   ],
   module: {
     rules: [
@@ -33,20 +33,20 @@ module.exports = {
         exclude: /node_modules/,
         use: [{
           loader: 'babel-loader',
-        }]
+        }],
 
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
       },
       {
         test: /\.scss$/,
@@ -60,25 +60,25 @@ module.exports = {
               modules: {
                 exportLocalsConvention: 'camelCase',
                 localIdentName: '[name]__[local]_[hash:base64:5]',
-                mode: 'local'
+                mode: 'local',
               },
             },
-          }, 'sass-loader']
+          }, 'sass-loader'],
       },
       {
         test: /\.svg$/,
         use: [
           {
-            loader: "babel-loader"
+            loader: 'babel-loader',
           },
           {
-            loader: "react-svg-loader",
+            loader: 'react-svg-loader',
             options: {
-              jsx: true
-            }
-          }
-        ]
-      }
-    ]
-  }
-}
+              jsx: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
