@@ -2,12 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Cross from '../../assets/icons/cross.svg';
+import Star from '../../assets/icons/star.svg';
+import Facebook from '../../assets/icons/facebook.svg';
+import Instagram from '../../assets/icons/instagram.svg';
+import Pinterest from '../../assets/icons/pinterest.svg';
+import Twitter from '../../assets/icons/twitter.svg';
+import Youtube from '../../assets/icons/youtube.svg';
 
 import styles from './Icon.scss';
 
 const icons = {
-  cross: Cross,
+  star: Star,
+  facebook: Facebook,
+  instagram: Instagram,
+  pinterest: Pinterest,
+  twitter: Twitter,
+  youtube: Youtube,
 };
 
 const Icon = ({
