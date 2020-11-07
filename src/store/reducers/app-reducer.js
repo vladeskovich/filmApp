@@ -9,7 +9,7 @@ const appReducer = (state = initialState, action) => {
     case SET_COUNT:
       return {
         ...state,
-        count: state.count + 5,
+        count: state.count + 1,
       };
     default:
       return state;
