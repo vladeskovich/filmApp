@@ -1,11 +1,11 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import Test from '../../components/Test';
 import styles from './App.scss';
+import Slider from '../../components/Slider';
 
 const App = () => (
   <div className={styles.appWrapper}>
-    <Test/>
+    <Slider/>
   </div>
 );
 
