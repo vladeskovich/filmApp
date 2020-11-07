@@ -1,6 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import Test from '../Test';
+import Test from '../../components/Test';
 import styles from './App.scss';
 
 const App = () => (

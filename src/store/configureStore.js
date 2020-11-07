@@ -6,7 +6,7 @@ export default function configureStore() {
   const store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
   if (module.hot) {
-    module.hot.accept('./reducers/redux-index', () => {
+    module.hot.accept('./reducers/index', () => {
       store.replaceReducer(reducers);
     });
   }
