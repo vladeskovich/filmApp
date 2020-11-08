@@ -1,10 +1,26 @@
 .slider {
-  height: 800px;
+  position: relative;
+  height: 750px;
   width: 100%;
   background-color: red;
+  transition: transform 0.9s ease;
 }
 
 .background {
   height: 100%;
   width: 100%;
+}
+
+.description {
+
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  font-weight: bold;
+
+  color: white;
+}
+
+.title {
+  font-size: 45px;
 }
