@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Typography from '../Typography';
 import List from '../List';
+import Title from '../Title';
 import styles from './Description.scss';
 
 const Description = ({
@@ -16,9 +17,10 @@ const Description = ({
 
   return (
     <div className={classes}>
-      <Typography
-        className={styles.title}
-      >{data.title.toUpperCase()}</Typography>
+      <Title
+        data={data.title}
+        className={styles.sliderTitle}
+      />
       <List
         data={data.genres}
         direction="horizontal"
@@ -33,7 +35,9 @@ const Description = ({
         </Typography>
       )}
       </List>
-      <Typography>{time.hours} | {time.minutes}</Typography>
+      <Typography className={styles.time}>
+        {time.hours} | {time.minutes}
+      </Typography>
     </div>
   );
 };

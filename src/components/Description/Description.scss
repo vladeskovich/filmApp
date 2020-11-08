@@ -1,9 +1,9 @@
-.title {
+.sliderTitle {
   font-size: 45px;
 }
 
 .description {
-
+  display: inline-block;
   left: 60px;
   bottom: 150px;
   position: absolute;
@@ -21,3 +21,6 @@
   font-weight: normal;
 }
 
+.time {
+  display: inline-block;
+}
