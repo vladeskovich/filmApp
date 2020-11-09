@@ -1,0 +1,57 @@
+.ratingStar {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  fill: red;
+}
+
+.ratingStarFill {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  fill: blueviolet;
+}
+
+.ratingContainer {
+  background-color: blueviolet;
+  display: flex;
+  position: absolute;
+  bottom: -60px;
+  transform: rotateY(180deg);
+}
+
+.ratingContainer input {
+  display: none;
+}
+
+.ratingContainer label {
+  display: block;
+  width: 50px;
+  background-color: red;
+}
+
+.ratingContainer label:before {
+  content: '★';
+  position: relative;
+  display: block;
+  font-size: 50px;
+  color: greenyellow;
+}
+
+.ratingContainer label:after {
+  content: '★';
+  position: absolute;
+  top: 0;
+  display: block;
+  font-size: 50px;
+  color: #0aaee4;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.ratingContainer label:hover ~ label:after,
+.ratingContainer label:hover:after,
+.ratingContainer label input:checked ~ label:after
+{
+  opacity: 1;
+}

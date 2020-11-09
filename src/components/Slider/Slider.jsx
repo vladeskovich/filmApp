@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../Image';
-import styles from './Slider.scss';
 import Description from '../Description';
+
+import styles from './Slider.scss';
 
 const Slider = ({
   className,
   onClick,
 }) => {
   const classes = classNames(styles.slider, className);
-  const baseUrl = 'http://image.tmdb.org/t/p/w500/';
+  const baseUrl = 'http://image.tmdb.org/t/p/original/';
   const test = [
     {
       src: `${baseUrl}pci1ArYW7oJ2eyTo2NMYEKHHiCP.jpg`,

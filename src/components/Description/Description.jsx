@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Typography from '../Typography';
-import List from '../List';
 import Title from '../Title';
+import Genre from '../Genre';
+import Rating from '../Rating';
+
 import styles from './Description.scss';
 
 const Description = ({
@@ -21,23 +22,11 @@ const Description = ({
         data={data.title}
         className={styles.sliderTitle}
       />
-      <List
-        data={data.genres}
-        direction="horizontal"
-        ordered={false}
-        className={styles.genresContainer}
-        itemClassName={styles.genreItem}
-      >{(genre) => (
-        <Typography
-          className={styles.genre}
-        >
-          {genre.name}
-        </Typography>
-      )}
-      </List>
+      <Genre data={data.genres}/>
       <Typography className={styles.time}>
-        {time.hours} | {time.minutes}
+        | {time.hours}h {time.minutes}m
       </Typography>
+      <Rating data={2}/>
     </div>
   );
 };
