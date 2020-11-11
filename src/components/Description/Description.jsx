@@ -26,7 +26,7 @@ const Description = ({
       <Typography className={styles.time}>
         | {time.hours}h {time.minutes}m
       </Typography>
-      <Rating data={2}/>
+      <Rating data={1}/>
     </div>
   );
 };

@@ -6,18 +6,22 @@ import Input from '../Input';
 import styles from './Star.scss';
 
 const Star = ({
+  id,
   checked,
   className,
 }) => {
   const classes = classNames(styles.star, className);
 
   return (
-    <label>
+    <>
       <Input
+        checked={checked === id}
         type='radio'
         name='star'
+        id={id}
       />
-    </label>
+      <label for={id}></label>
+    </>
   );
 };
 
@@ -26,7 +30,6 @@ Star.propTypes = {
   checked: PropTypes.bool,
 };
 
-Star.defaultProps = {
-};
+Star.defaultProps = {};
 
 export default Star;
