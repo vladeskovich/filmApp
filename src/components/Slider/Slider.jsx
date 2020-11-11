@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Image from '../Image';
 import Description from '../Description';
+import SliderNavigation from '../SliderNavigation';
 
 import styles from './Slider.scss';
 
@@ -71,6 +71,7 @@ const Slider = ({
       <Description
         data={test[slide]}
       />
+      <SliderNavigation/>
     </div>
   );
 };

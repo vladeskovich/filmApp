@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Star from '../Star';
+import BarItem from '../Star';
 import styles from './Rating.scss';
 
 const Rating = ({
@@ -8,7 +8,8 @@ const Rating = ({
 }) => {
   const convertedRating = Math.round(rating / 2);
   const fiveStar = Array.from({ length: 5 }, (v, k) => (
-      <Star
+      <BarItem
+        name='star'
         checked={convertedRating}
         id={5 - k}
       />
