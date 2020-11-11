@@ -3,39 +3,39 @@
   position: absolute;
   bottom: -60px;
   transform: rotateY(180deg);
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: block;
+    width: 35px;
+  }
+
+  label:before {
+    content: '★';
+    position: relative;
+    display: block;
+    font-size: 35px;
+    color: greenyellow;
+  }
+
+  label:after {
+    content: '★';
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 35px;
+    color: #0aaee4;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  label:hover ~ label:after,
+  label:hover:after,
+  input:checked ~ label:after {
+    opacity: 1;
+  }
 }
 
-.ratingContainer input {
-  display: none;
-}
-
-.ratingContainer label {
-  display: block;
-  width: 50px;
-}
-
-.ratingContainer label:before {
-  content: '★';
-  position: relative;
-  display: block;
-  font-size: 50px;
-  color: greenyellow;
-}
-
-.ratingContainer label:after {
-  content: '★';
-  position: absolute;
-  top: 0;
-  display: block;
-  font-size: 50px;
-  color: #0aaee4;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.ratingContainer label:hover ~ label:after,
-.ratingContainer label:hover:after,
-.ratingContainer input:checked ~ label:after
-{
-  opacity: 1;
-}

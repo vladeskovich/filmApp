@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import getTimeFromMin from '../../utils/getTimeFromMin';
+import VoteCount from '../VoteCount';
 import Typography from '../Typography';
 import Title from '../Title';
 import Genre from '../Genre';
@@ -13,11 +13,9 @@ const Description = ({
   data,
   className,
 }) => {
-  const classes = classNames(styles.description, className);
   const time = getTimeFromMin(data.runtime);
-
   return (
-    <div className={classes}>
+    <div className={styles.description}>
       <Title
         data={data.title}
         className={styles.sliderTitle}
@@ -26,7 +24,11 @@ const Description = ({
       <Typography className={styles.time}>
         | {time.hours}h {time.minutes}m
       </Typography>
-      <Rating data={1}/>
+      <Rating rating={data.vote_average}/>
+      <VoteCount
+        rating={data.vote_average}
+        className={styles.sliderVoteCount}
+      />
     </div>
   );
 };

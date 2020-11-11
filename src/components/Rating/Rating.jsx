@@ -4,10 +4,10 @@ import Star from '../Star';
 import styles from './Rating.scss';
 
 const Rating = ({
-  data,
+  rating,
 }) => {
-  const convertedRating = Math.round(data / 2);
-  const rating = Array.from({ length: 5 }, (v, k) => (
+  const convertedRating = Math.round(rating / 2);
+  const fiveStar = Array.from({ length: 5 }, (v, k) => (
       <Star
         checked={convertedRating}
         id={5 - k}
@@ -15,7 +15,7 @@ const Rating = ({
   ));
   return (
     <div className={styles.ratingContainer}>
-      {rating}
+      {fiveStar}
     </div>
   );
 };

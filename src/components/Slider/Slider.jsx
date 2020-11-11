@@ -7,10 +7,8 @@ import Description from '../Description';
 import styles from './Slider.scss';
 
 const Slider = ({
-  className,
   onClick,
 }) => {
-  const classes = classNames(styles.slider, className);
   const baseUrl = 'http://image.tmdb.org/t/p/original/';
   const test = [
     {
@@ -35,6 +33,7 @@ const Slider = ({
         },
       ],
       runtime: 85,
+      vote_average: 5,
     },
     {
       src: `${baseUrl}riAooJrFvVhotyaOgoI0WR7okSe.jpg`,
@@ -58,13 +57,14 @@ const Slider = ({
         },
       ],
       runtime: 90,
+      vote_average: 5,
     },
   ];
   const [slide, setSlide] = useState(0);
   // setTimeout(() => (slide === 1 ? setSlide(0) : setSlide(1)), 2000);
 
   return (
-    <div className={classes}>
+    <div className={styles.slider}>
       <Image src={test[slide].src}
       className={styles.background}
       />
