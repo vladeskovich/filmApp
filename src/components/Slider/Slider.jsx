@@ -5,6 +5,7 @@ import Description from '../Description';
 import SliderNavigation from '../SliderNavigation';
 
 import styles from './Slider.scss';
+import Button from '../Button';
 
 const Slider = ({
   onClick,
@@ -61,7 +62,7 @@ const Slider = ({
     },
   ];
   const [slide, setSlide] = useState(0);
-  // setTimeout(() => (slide === 1 ? setSlide(0) : setSlide(1)), 2000);
+  // setTimeout(() => (slide === 1 ? setSlide(0) : setSlide(1)), 3000);
 
   return (
     <div className={styles.slider}>
@@ -72,6 +73,10 @@ const Slider = ({
         data={test[slide]}
       />
       <SliderNavigation/>
+      <Button
+        color='none'
+        outline={true}
+      >Watch Now</Button>
     </div>
   );
 };
