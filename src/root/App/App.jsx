@@ -1,7 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import styles from './App.scss';
 import Slider from '../../components/Slider';
+import styles from './App.scss';
 
 const App = () => (
   <div className={styles.appWrapper}>

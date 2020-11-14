@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import Typography from '../Typography';
-import styles from './Genre.scss';
 import List from '../List';
 
-const Genre = ({
+import styles from './Genres.scss';
+
+const Genres = ({
   className,
   data,
 }) => {
@@ -33,11 +33,11 @@ const Genre = ({
   );
 };
 
-Genre.propTypes = {
+Genres.propTypes = {
   data: PropTypes.string,
   className: PropTypes.string,
 };
 
-Genre.defaultProps = {};
+Genres.defaultProps = {};
 
-export default Genre;
+export default Genres;

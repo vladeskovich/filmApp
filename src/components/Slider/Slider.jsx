@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Image from '../Image';
-import Description from '../Description';
 import SliderNavigation from '../SliderNavigation';
-
+import Slide from '../Slide';
 import styles from './Slider.scss';
-import Button from '../Button';
 
 const Slider = ({
   onClick,
 }) => {
-  const baseUrl = 'http://image.tmdb.org/t/p/original/';
+  const baseUrl = 'http://image.tmdb.org/t/p/w1280/';
   const test = [
     {
-      src: `${baseUrl}pci1ArYW7oJ2eyTo2NMYEKHHiCP.jpg`,
+      src: `${baseUrl}gnf4Cb2rms69QbCnGFJyqwBWsxv.jpg`,
       title: 'Инферно Габриэля 2',
       genres: [
         {
@@ -66,17 +63,8 @@ const Slider = ({
 
   return (
     <div className={styles.slider}>
-      <Image src={test[slide].src}
-      className={styles.background}
-      />
-      <Description
-        data={test[slide]}
-      />
+      <Slide slide={test[slide]}/>
       <SliderNavigation/>
-      <Button
-        color='none'
-        outline={true}
-      >Watch Now</Button>
     </div>
   );
 };

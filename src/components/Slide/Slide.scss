@@ -1,0 +1,43 @@
+.slide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover;
+  color: white;
+  animation: zoom 3s linear infinite;
+}
+
+.slideBottom {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 70px;
+}
+
+.slideInfo {
+  padding-left: 70px;
+}
+
+.textTitle {
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+}
+
+.wrapperRuntimeFilm {
+  display: inline-block;
+}
+
+.runtimeFilm {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.slideButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  padding-right: 120px;
+  margin-top: 70px;
+}
