@@ -1,21 +1,31 @@
-const SET_COUNT = 'SET_COUNT';
+import { filmAPI } from '../../api/api';
+
+const SET_FILM = 'SET_FILM';
 
 export const initialState = {
-  count: 0,
+  films: [],
 };
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_COUNT:
+    case SET_FILM:
       return {
         ...state,
-        count: state.count + 1,
+        films: action.data,
       };
     default:
       return state;
   }
 };
 
-export const setCount = () => ({ type: 'SET_COUNT' });
+export const setFilm = (results) => ({ type: 'SET_FILM', data: results });
+
+export const initializeFilms = () => (dispatch) => {
+  filmAPI.getTrendingFilms()
+    .then((response) => {
+      debugger;
+      dispatch(setFilm(response));
+    });
+};
 
 export default appReducer;

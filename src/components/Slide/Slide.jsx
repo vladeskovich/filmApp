@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Image from '../Image';
-import Description from '../Description';
-import SliderNavigation from '../SliderNavigation';
 import Button from '../Button';
 import Typography from '../Typography';
 import Genres from '../Genre';
-import styles from './Slide.scss';
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Rating from '../Rating';
+
+import styles from './Slide.scss';
 
 const Slide = ({
   slide,

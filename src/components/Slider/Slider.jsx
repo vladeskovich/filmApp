@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { initializeFilms } from '../../store/reducers/app-reducer';
 import SliderNavigation from '../SliderNavigation';
 import Slide from '../Slide';
 import styles from './Slider.scss';
 
+const mapStateToProps = (state) => ({
+  films: state.appMain.films,
+});
+
 const Slider = ({
   onClick,
+  films,
+  initializeFilms,
 }) => {
+  useEffect(() => {
+    debugger;
+    initializeFilms();
+  }, []);
   const baseUrl = 'http://image.tmdb.org/t/p/w1280/';
   const test = [
     {
@@ -76,4 +88,4 @@ Slider.propTypes = {
 
 Slider.defaultProps = {};
 
-export default Slider;
+export default connect(mapStateToProps, { initializeFilms })(Slider);
