@@ -1,0 +1,52 @@
+@import "src/styles/constants";
+.ratingContainer {
+  display: flex;
+}
+
+.ratingInStars {
+  display: flex;
+  position: relative;
+  transform: rotateY(180deg);
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: block;
+    width: 30px;
+  }
+
+  label:before {
+    content: '★';
+    position: relative;
+    display: block;
+    font-size: 35px;
+    color: #d6d8d8;
+    opacity: 0.5;
+  }
+
+  label:after {
+    content: '★';
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 35px;
+    color: $blue-main;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  label:hover ~ label:after,
+  label:hover:after,
+  input:checked ~ label:after {
+    opacity: 1;
+  }
+}
+
+.ratingInNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0 0 10px;
+}

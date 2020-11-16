@@ -63,7 +63,17 @@ module.exports = {
                 mode: 'local',
               },
             },
-          }, 'sass-loader'],
+          }, 'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                indentWidth: 4,
+                includePaths: ['./styles'],
+              },
+            },
+
+          }],
       },
       {
         test: /\.svg$/,

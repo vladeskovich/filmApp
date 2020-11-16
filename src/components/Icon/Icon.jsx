@@ -8,10 +8,12 @@ import Instagram from '../../assets/icons/instagram.svg';
 import Pinterest from '../../assets/icons/pinterest.svg';
 import Twitter from '../../assets/icons/twitter.svg';
 import Youtube from '../../assets/icons/youtube.svg';
+import Arrow from '../../assets/icons/arrow.svg';
 
 import styles from './Icon.scss';
 
 const icons = {
+  arrow: Arrow,
   star: Star,
   facebook: Facebook,
   instagram: Instagram,

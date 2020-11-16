@@ -1,0 +1,29 @@
+.slider {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  transition: 0.9s;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  animation: zoom 3s linear infinite;
+}
+
+/*@keyframes zoom {
+  0% {
+    transform: scale(1.3);
+  }
+  15% {
+    transform: scale(1);
+  }
+  85% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}*/
+

@@ -6,11 +6,19 @@ import styles from './Button.scss';
 
 const Button = ({
   type,
+  outline,
+  color,
   className,
   children,
   ...props
 }) => {
-  const classes = classNames(styles.button, className, type);
+  const classes = classNames(
+    styles.button,
+    className,
+    type,
+    { [styles.outline]: outline },
+    { [styles[color]]: color },
+  );
 
   return (
     <button
@@ -27,6 +35,8 @@ Button.propTypes = {
   type: PropTypes.oneOf(['submit', 'button']),
   className: PropTypes.string,
   value: PropTypes.string,
+  color: PropTypes.string,
+  bool: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
