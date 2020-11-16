@@ -4,11 +4,13 @@ import BarItem from '../Star';
 import styles from './SliderNavigation.scss';
 
 const SliderNavigation = ({
+  activeSlide,
   onClick,
 }) => {
   const fiveStar = Array.from({ length: 5 }, (v, k) => (
       <BarItem
-        checked={3}
+        onClick={onClick}
+        checked={activeSlide + 1}
         name='bar'
         id={k + 1}
       />

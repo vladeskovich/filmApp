@@ -5,49 +5,64 @@ import Typography from '../Typography';
 import Genres from '../Genre';
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Rating from '../Rating';
-
 import styles from './Slide.scss';
 
 const Slide = ({
-  slide,
+  slideImage,
+  titleFilm,
+  voteCount,
+  runtime,
+  genres,
   onClick,
 }) => {
-  const time = getTimeFromMin(slide.runtime);
+  const time = getTimeFromMin(runtime);
+  const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
   return (
-  <div style={{ backgroundImage: `url(${slide.src})` }} className={styles.slide}>
-    <div className={styles.slideTop}></div>
-    <div className={styles.slideBottom}>
-      <div className={styles.slideInfo}>
-        <div className={styles.slideTitle}>
-          <Typography className={styles.textTitle}>{slide.title.toUpperCase()}</Typography>
+    <div style={{ backgroundImage: `url(${urlImage})` }} className={styles.slide}>
+      <div className={styles.slideTop}></div>
+      <div className={styles.slideBottom}>
+        <div className={styles.slideInfo}>
+          <div className={styles.slideTitle}>
+            <Typography className={styles.textTitle}>{titleFilm.toUpperCase()}</Typography>
+          </div>
+          <Genres data={genres}/>
+          <div className={styles.wrapperRuntimeFilm}>
+            <Typography className={styles.runtimeFilm}>
+              | {time.hours}h {time.minutes}m
+            </Typography>
+          </div>
+          <Rating rating={voteCount}/>
         </div>
-        <Genres data={slide.genres}/>
-        <div className={styles.wrapperRuntimeFilm}>
-          <Typography className={styles.runtimeFilm}>
-            | {time.hours}h {time.minutes}m
-          </Typography>
+        <div className={styles.slideButtons}>
+          <Button
+            color='blue'
+            outline={true}
+          >Watch Now</Button>
+          <Button
+            color='none'
+            outline={true}
+          >View Info</Button>
         </div>
-        <Rating rating={slide.vote_average}/>
-      </div>
-      <div className={styles.slideButtons}>
-        <Button
-          color='blue'
-          outline={true}
-        >Watch Now</Button>
-        <Button
-          color='none'
-          outline={true}
-        >View Info</Button>
       </div>
     </div>
-  </div>
   );
 };
 Slide.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
+  slideImage: PropTypes.string,
+  titleFilm: PropTypes.string,
+  voteCount: PropTypes.number,
+  runtime: PropTypes.number,
+  genres: PropTypes.array,
 };
 
-Slide.defaultProps = {};
+Slide.defaultProps = {
+  slideImage: ' ',
+  titleFilm: ' ',
+  voteCount: 0,
+  runtime: 0,
+  genres: [],
+};
 
 export default Slide;

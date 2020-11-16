@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 
 const BarItem = ({
+  onClick,
   id,
   checked,
   name,
@@ -17,7 +18,7 @@ const BarItem = ({
         name={name}
         id={nameId}
       />
-      <label for={nameId}></label>
+      <label onClick={() => onClick(id - 1)} for={nameId}></label>
     </>
   );
 };
