@@ -1,5 +1,3 @@
-import { genresAPI } from '../../utils/api';
-
 const SET_GENRES = 'SET_GENRES';
 
 export const initialState = {

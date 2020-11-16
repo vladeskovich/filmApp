@@ -36,11 +36,11 @@ const Slide = ({
         <div className={styles.slideButtons}>
           <Button
             color='blue'
-            outline={true}
+            outline
           >Watch Now</Button>
           <Button
             color='none'
-            outline={true}
+            outline
           >View Info</Button>
         </div>
       </div>
