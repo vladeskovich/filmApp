@@ -27,7 +27,7 @@ const Slider = ({
   useEffect(() => {
     initializeFilms();
   }, []);
-  setTimeout(() => (slide < 4 ? setSlide(slide + 1) : setSlide(0)), 3000);
+  // setTimeout(() => (slide < 4 ? setSlide(slide + 1) : setSlide(0)), 3000);
   return (
     <div className={styles.slider}>
       <Slide {...dataSlide[slide]}/>
