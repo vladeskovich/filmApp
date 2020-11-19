@@ -1,0 +1,56 @@
+@import "src/styles/constants";
+
+.filmContainer {
+  width: 250px;
+  height: 300px;
+  position: relative;
+  background-color: grey;
+  z-index: 4;
+}
+
+.imageFilm {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selectAction {
+  width: 100%;
+  height: 220px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.45s ease;
+  color: white;
+  z-index: 1;
+  //opacity: 0;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    //opacity: 1;
+  }
+}
+
+.playIcon {
+  width: 70px;
+  height: 70px;
+  fill: $blue-main;
+}
+
+.playNowText {
+  font-size: 16px;
+  padding: 20px 0;
+}
+
+.linkPlay {
+  color: white;
+  text-decoration: none;
+}
+
+.filmInfo {
+
+}

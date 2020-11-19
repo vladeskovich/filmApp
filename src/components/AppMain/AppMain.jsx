@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import styles from './AppMain.scss';
+import React from 'react';
 import FilmNavigation from '../FilmNavigation';
+import FilmItem from '../FilmItem';
+import styles from './AppMain.scss';
 
 const AppMain = () => {
   const genres = [
@@ -36,6 +37,7 @@ const AppMain = () => {
           <FilmNavigation
             genres={genres}
           />
+          <FilmItem/>
       </div>
     </div>
   );

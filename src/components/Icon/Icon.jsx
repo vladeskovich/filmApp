@@ -11,10 +11,12 @@ import Youtube from '../../assets/icons/youtube.svg';
 import Arrow from '../../assets/icons/arrow.svg';
 import Rectangle from '../../assets/icons/rectangles.svg';
 import Square from '../../assets/icons/square.svg';
+import Play from '../../assets/icons/play.svg';
 
 import styles from './Icon.scss';
 
 const icons = {
+  play: Play,
   rectangle: Rectangle,
   square: Square,
   arrow: Arrow,
