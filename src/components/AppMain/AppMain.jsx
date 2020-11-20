@@ -1,9 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import FilmNavigation from '../FilmNavigation';
 import FilmItem from '../FilmItem';
+import FilmList from '../FilmList';
+import { initializeFilms } from '../../store/actions/films';
+import Preloader from '../Preloader';
 import styles from './AppMain.scss';
 
-const AppMain = () => {
+const mapStateToProps = (state) => ({
+  films: state.films.films,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+}
+);
+
+const AppMain = ({
+  films,
+}) => {
   const genres = [
     {
       id: 28,
@@ -30,17 +44,19 @@ const AppMain = () => {
       name: 'Crime',
     },
   ];
-
+  debugger;
   return (
     <div className={styles.appMain}>
       <div className={styles.appMainContent}>
           <FilmNavigation
             genres={genres}
           />
-          <FilmItem/>
+          {/* <FilmItem/> */}
+          {/* <FilmList films={films}/> */}
+          <Preloader/>
       </div>
     </div>
   );
 };
 
-export default AppMain;
+export default connect(mapStateToProps, mapDispatchToProps)(AppMain);
