@@ -51,9 +51,8 @@ const AppMain = ({
           <FilmNavigation
             genres={genres}
           />
-          {/* <FilmItem/> */}
-          {/* <FilmList films={films}/> */}
-          <Preloader/>
+          {films ? <FilmList films={films}/> : <Preloader/>}
+
       </div>
     </div>
   );

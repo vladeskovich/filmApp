@@ -15,6 +15,7 @@ const films = (state = initialState, action) => {
           voteCount: film.vote_average,
           runtime: film.runtime,
           genres: film.genres,
+          overview: film.overview,
         })),
       };
     default:

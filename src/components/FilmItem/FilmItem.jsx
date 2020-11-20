@@ -15,10 +15,10 @@ const FilmItem = ({
   titleFilm,
   slideImage,
   voteCount,
+  overview,
 }) => {
   const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
   const [showInfo, setShow] = useState(false);
-
   return (
     <div className={styles.filmContainer}>
       <Image
@@ -79,7 +79,8 @@ const FilmItem = ({
         </div>
         <Typography
           className={styles.description}
-        >Lorem dbfeibo oeinb doefio n
+        >
+          {overview}
         </Typography>
         <Button
           color='blue'

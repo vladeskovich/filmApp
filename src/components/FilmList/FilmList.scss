@@ -1,5 +1,14 @@
 @import "src/styles/constants";
 
 .filmsContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: space-between;
+}
 
+.filmsContainer:last-child::after {
+  content: '';
+  min-width: 250px;
 }

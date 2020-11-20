@@ -1,12 +1,15 @@
 @import "src/styles/constants";
 
 .filmContainer {
-  width: 250px;
-  height: 300px;
+  max-width: 250px;
+  min-height: 300px;
   position: relative;
   background-color: grey;
   overflow: hidden;
+  border-radius: 3px 3px 0 0;
+  margin-bottom: 20px;
 }
+
 
 .imageFilm {
   width: 100%;
