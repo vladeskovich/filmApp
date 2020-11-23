@@ -13,11 +13,10 @@ const Slide = ({
   voteCount,
   runtime,
   genres,
-  onClick,
 }) => {
   const time = getTimeFromMin(runtime);
   const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
-  console.log(genres);
+
   return (
     <div style={{ backgroundImage: `url(${urlImage})` }} className={styles.slide}>
       <div className={styles.slideTop}></div>

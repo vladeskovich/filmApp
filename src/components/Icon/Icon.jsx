@@ -9,7 +9,7 @@ import Pinterest from '../../assets/icons/pinterest.svg';
 import Twitter from '../../assets/icons/twitter.svg';
 import Youtube from '../../assets/icons/youtube.svg';
 import Arrow from '../../assets/icons/arrow.svg';
-import Rectangle from '../../assets/icons/rectangles.svg';
+import List from '../../assets/icons/list.svg';
 import Square from '../../assets/icons/square.svg';
 import Play from '../../assets/icons/play.svg';
 import Cross from '../../assets/icons/cross.svg';
@@ -18,7 +18,7 @@ import styles from './Icon.scss';
 
 const icons = {
   play: Play,
-  rectangle: Rectangle,
+  list: List,
   square: Square,
   cross: Cross,
   arrow: Arrow,

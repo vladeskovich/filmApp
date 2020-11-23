@@ -11,7 +11,6 @@ const FilmNavigation = ({
 }) => {
   const [activeGenre, setGenre] = useState('Genre');
   const [visibleList, setVisibleList] = useState(false);
-  debugger;
   return (
     <div className={styles.navBarWrapper}>
       <div className={styles.navBar}>
@@ -74,7 +73,7 @@ const FilmNavigation = ({
           }
         />
         <Icon
-          name='rectangle'
+          name='list'
           className={classNames(styles.rectangle, { [styles.rotateArrow]: visibleList })
           }
         />

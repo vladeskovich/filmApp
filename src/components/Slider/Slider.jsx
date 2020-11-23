@@ -11,8 +11,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  initializeFilms: () => {
-    dispatch(initializeFilms());
+  initializeFilms: (page) => {
+    dispatch(initializeFilms(page));
   },
 }
 );
@@ -26,8 +26,15 @@ const Slider = ({
   const [slide, setSlide] = useState(0);
   useEffect(() => {
     initializeFilms();
+    window.addEventListener('scroll', (event) => {
+      if (Math.round(window.scrollY + window.innerHeight) === document.body.scrollHeight) {
+        initializeFilms();
+      }
+    });
   }, []);
+
   // setTimeout(() => (slide < 4 ? setSlide(slide + 1) : setSlide(0)), 3000);
+
   return (
     <div className={styles.slider}>
       <Slide {...dataSlide[slide]}/>

@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import FilmNavigation from '../FilmNavigation';
-import FilmItem from '../FilmItem';
 import FilmList from '../FilmList';
-import { initializeFilms } from '../../store/actions/films';
 import Preloader from '../Preloader';
 import styles from './AppMain.scss';
 
@@ -11,8 +9,7 @@ const mapStateToProps = (state) => ({
   films: state.films.films,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-}
+const mapDispatchToProps = (dispatch) => ({}
 );
 
 const AppMain = ({
@@ -44,14 +41,18 @@ const AppMain = ({
       name: 'Crime',
     },
   ];
-  debugger;
   return (
     <div className={styles.appMain}>
       <div className={styles.appMainContent}>
-          <FilmNavigation
-            genres={genres}
+        <FilmNavigation
+          genres={genres}
+        />
+        {films.length !== 0
+          ? <FilmList
+            films={films}
           />
-          {films ? <FilmList films={films}/> : <Preloader/>}
+          : <Preloader/>
+        }
 
       </div>
     </div>

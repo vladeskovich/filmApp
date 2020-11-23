@@ -8,6 +8,7 @@
   background-size: cover;
   color: white;
   animation: zoom 3s linear infinite;
+  box-shadow: inset 150px 150px 150px rgba(0,0,0,0.5), inset -150px -150px 150px rgba(0,0,0,0.5);
 }
 /*@keyframes zoom {
   0% {

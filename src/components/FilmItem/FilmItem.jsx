@@ -19,6 +19,8 @@ const FilmItem = ({
 }) => {
   const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
   const [showInfo, setShow] = useState(false);
+  const threeGenres = genres.slice(0, 3);
+  debugger;
   return (
     <div className={styles.filmContainer}>
       <Image
@@ -58,7 +60,7 @@ const FilmItem = ({
         <div className={styles.filmHeader}>
           <Typography className={styles.textTitle}>{titleFilm.toUpperCase()}</Typography>
           <List
-            data={genres}
+            data={threeGenres}
             direction="horizontal"
             ordered={false}
             className={styles.genresContainer}
@@ -92,10 +94,7 @@ const FilmItem = ({
     </div>);
 };
 
-FilmItem.propTypes = {
-  checked: PropTypes.bool,
-  name: PropTypes.string,
-};
+FilmItem.propTypes = {};
 
 FilmItem.defaultProps = {};
 
