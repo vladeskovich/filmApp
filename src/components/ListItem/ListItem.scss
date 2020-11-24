@@ -1,0 +1,76 @@
+@import "src/styles/constants";
+
+.filmContainer {
+  height: 400px;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: inset 150px 150px 150px rgba(0,0,0,0.5), inset -150px -150px 150px rgba(0,0,0,0.5);
+}
+
+.imageFilm {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filmInfo {
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  box-shadow: inset 150px 150px 150px rgba(0,0,0,0.5), inset -150px -150px 150px rgba(0,0,0,0.5);
+}
+
+.textTitle {
+  padding: 0 0 20px 0;
+  color: $absolute-white;
+  font-size: 40px;
+}
+
+.genresContainer {
+  font-size: 18px;
+}
+
+.genreItem {
+  &:not(:last-child):after {
+    content: ', ';
+    font-size: 16px;
+    color: $blue-main;
+    margin-right: 2px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #09ade3;
+
+    &:hover {
+      color: #26c9ff;
+    }
+  }
+}
+
+.rating {
+  color: white;
+  padding: 10px 0 0 0;
+}
+
+.description {
+  overflow: auto;
+  color: $absolute-white;
+  width: 100%;
+  max-width: 400px;
+  max-height: 150px;
+  margin-bottom: 20px;
+  text-indent: 20px;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.watchNow {
+
+}

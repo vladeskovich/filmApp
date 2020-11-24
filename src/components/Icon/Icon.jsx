@@ -10,7 +10,7 @@ import Twitter from '../../assets/icons/twitter.svg';
 import Youtube from '../../assets/icons/youtube.svg';
 import Arrow from '../../assets/icons/arrow.svg';
 import List from '../../assets/icons/list.svg';
-import Square from '../../assets/icons/square.svg';
+import Grid from '../../assets/icons/grid.svg';
 import Play from '../../assets/icons/play.svg';
 import Cross from '../../assets/icons/cross.svg';
 
@@ -19,7 +19,7 @@ import styles from './Icon.scss';
 const icons = {
   play: Play,
   list: List,
-  square: Square,
+  grid: Grid,
   cross: Cross,
   arrow: Arrow,
   star: Star,

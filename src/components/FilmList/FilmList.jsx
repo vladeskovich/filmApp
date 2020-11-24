@@ -1,15 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FilmItem from '../FilmItem';
+import classNames from 'classnames';
+import GridItem from '../GridItem';
+import Preloader from '../Preloader';
+import ListItem from '../ListItem';
 import styles from './FilmList.scss';
 
 const FilmList = ({
   films,
-}) => (
-    <div className={styles.filmsContainer}>
-      {films.map((film) => <FilmItem {...film}/>)}
+  loading,
+  displayType,
+}) => {
+  const classes = classNames(styles.filmsContainer,
+    { [styles.grid]: displayType.grid },
+    { [styles.list]: displayType.list });
+  return (
+    <div className={classes}>
+      {displayType.grid && films.map((film) => <GridItem displayType={displayType} {...film}/>)}
+      {displayType.list && films.map((film) => <ListItem displayType={displayType} {...film}/>)}
+      {loading && <Preloader/>}
     </div>
-);
+  );
+};
 
 FilmList.propTypes = {
   checked: PropTypes.bool,

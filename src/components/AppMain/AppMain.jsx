@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import FilmNavigation from '../FilmNavigation';
 import FilmList from '../FilmList';
@@ -7,13 +7,12 @@ import styles from './AppMain.scss';
 
 const mapStateToProps = (state) => ({
   films: state.films.films,
+  loading: state.films.loading,
 });
-
-const mapDispatchToProps = (dispatch) => ({}
-);
 
 const AppMain = ({
   films,
+  loading,
 }) => {
   const genres = [
     {
@@ -41,15 +40,21 @@ const AppMain = ({
       name: 'Crime',
     },
   ];
+  const [displayType, changeDisplayType] = useState({ grid: true, list: false });
+
   return (
     <div className={styles.appMain}>
       <div className={styles.appMainContent}>
         <FilmNavigation
           genres={genres}
+          displayType={displayType}
+          changeDisplayType={changeDisplayType}
         />
         {films.length !== 0
           ? <FilmList
             films={films}
+            loading={loading}
+            displayType={displayType}
           />
           : <Preloader/>
         }
@@ -59,4 +64,4 @@ const AppMain = ({
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppMain);
+export default connect(mapStateToProps, null)(AppMain);

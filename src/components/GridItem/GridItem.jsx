@@ -8,9 +8,9 @@ import Typography from '../Typography';
 import Button from '../Button';
 import List from '../List';
 import VoteCount from '../VoteCount';
-import styles from './FilmItem.scss';
+import styles from './GridItem.scss';
 
-const FilmItem = ({
+const GridItem = ({
   genres,
   titleFilm,
   slideImage,
@@ -20,7 +20,6 @@ const FilmItem = ({
   const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
   const [showInfo, setShow] = useState(false);
   const threeGenres = genres.slice(0, 3);
-  debugger;
   return (
     <div className={styles.filmContainer}>
       <Image
@@ -43,7 +42,6 @@ const FilmItem = ({
         </NavLink>
         <Button
           onClick={() => setShow(true)}
-          color='none'
           outline
         >View Info</Button>
       </div>
@@ -89,13 +87,12 @@ const FilmItem = ({
           outline
           className={styles.watchNow}
         >Watch Now</Button>
-
       </div>
     </div>);
 };
 
-FilmItem.propTypes = {};
+GridItem.propTypes = {};
 
-FilmItem.defaultProps = {};
+GridItem.defaultProps = {};
 
-export default FilmItem;
+export default GridItem;

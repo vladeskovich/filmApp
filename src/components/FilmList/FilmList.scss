@@ -3,12 +3,19 @@
 .filmsContainer {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   margin-top: 20px;
-  justify-content: space-between;
 }
 
-.filmsContainer:last-child::after {
-  content: '';
-  min-width: 250px;
+.filmsContainer.grid {
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:last-child::after {
+    content: '';
+    min-width: 250px;
+  }
+}
+
+.filmsContainer.list {
+  flex-direction: column;
 }

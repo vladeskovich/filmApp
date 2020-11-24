@@ -8,6 +8,8 @@ import styles from './FilmNavigation.scss';
 
 const FilmNavigation = ({
   genres,
+  displayType,
+  changeDisplayType,
 }) => {
   const [activeGenre, setGenre] = useState('Genre');
   const [visibleList, setVisibleList] = useState(false);
@@ -68,14 +70,14 @@ const FilmNavigation = ({
       </div>
       <div className={styles.orientationItem}>
         <Icon
-          name='square'
-          className={classNames(styles.square, { [styles.rotateArrow]: visibleList })
-          }
+          name='grid'
+          className={classNames(styles.grid, { [styles.activeGrid]: displayType.grid })}
+          onClick={() => changeDisplayType({ grid: true })}
         />
         <Icon
           name='list'
-          className={classNames(styles.rectangle, { [styles.rotateArrow]: visibleList })
-          }
+          className={classNames(styles.list, { [styles.activeList]: displayType.list })}
+          onClick={() => changeDisplayType({ list: true })}
         />
       </div>
     </div>

@@ -97,18 +97,28 @@
   min-width: 50px;
 }
 
-.square {
+.grid {
   width: 20px;
   height: 20px;
+  fill: $grey-main;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.grid.activeGrid {
   fill: $blue-main;
 }
 
-
-.rectangle {
+.list {
   width: 20px;
   height: 20px;
-  fill: $blue-main;
+  fill: $grey-main;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
+.list.activeList {
+  fill: $blue-main;
+}
 
 
