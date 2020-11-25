@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setCount } from '../store/reducers/app-reducer';
+import { setCount } from '../store/reducers/films';
 
 const Test = (props) => (
   <div>

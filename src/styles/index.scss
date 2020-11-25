@@ -1,6 +1,9 @@
 @import "~normalize.css";
 @import "roboto.scss";
+@import "constants";
 
 body {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
