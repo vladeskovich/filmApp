@@ -1,0 +1,68 @@
+@import "src/styles/constants";
+
+.navBarWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px #d6d7d7 solid;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerSortItem {
+  display: flex;
+
+  a {
+    padding: 8px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: $blue-main;
+  }
+
+  a.active {
+    border-bottom: 2px solid $blue-main;
+    color: $blue-main;
+  }
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.orientationItem {
+  display: flex;
+  justify-content: space-between;
+  min-width: 50px;
+}
+
+.grid {
+  width: 20px;
+  height: 20px;
+  fill: $grey-main;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.grid.activeGrid {
+  fill: $blue-main;
+}
+
+.list {
+  width: 20px;
+  height: 20px;
+  fill: $grey-main;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.list.activeList {
+  fill: $blue-main;
+}

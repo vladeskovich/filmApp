@@ -1,0 +1,21 @@
+@import "src/styles/constants";
+
+.filmsContainer {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+
+.filmsContainer.grid {
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:last-child::after {
+    content: '';
+    min-width: 250px;
+  }
+}
+
+.filmsContainer.list {
+  flex-direction: column;
+}
