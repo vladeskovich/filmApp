@@ -12,6 +12,7 @@ const Select = ({
   onChange,
   optionLabelProp,
   optionValueProp,
+  keyField,
 }) => {
   const [visibleList, setVisibleList] = useState(false);
   const history = useHistory();
@@ -28,11 +29,11 @@ const Select = ({
     event.stopPropagation();
 
     const { target: { dataset: { itemIndex } } } = event;
-    onChange(optionValueProp ? data[itemIndex][optionLabelProp] : data[itemIndex]);
+    onChange(optionValueProp ? data[itemIndex][optionValueProp] : data[itemIndex]);
 
-    history.push(`/genre/${data[itemIndex][optionValueProp]}`);
+    history.push(`/genre/${data[itemIndex][keyField]}`);
     setVisibleList(false);
-  }, [onChange, data, optionValueProp, setVisibleList]);
+  }, [onChange, data, optionValueProp, setVisibleList, keyField, history]);
 
   return (
     <div
@@ -78,7 +79,6 @@ Select.propTypes = {
 
 Select.defaultProps = {
   optionLabelProp: 'name',
-  optionValueProp: 'id',
 };
 
 export default Select;

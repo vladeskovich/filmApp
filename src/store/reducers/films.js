@@ -1,5 +1,4 @@
-const SET_FILM = 'SET_FILM';
-const SET_STATUS = 'SET_STATUS';
+import { SET_FILM, SET_STATUS } from '../../constants/actionTypes';
 
 export const initialState = {
   loading: false,

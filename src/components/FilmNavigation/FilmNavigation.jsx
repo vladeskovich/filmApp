@@ -12,14 +12,14 @@ const FilmNavigation = ({
   displayType,
   changeDisplayType,
 }) => {
-  const gridClass = classNames(styles.grid, { [styles.activeGrid]: displayType === 'grid' });
-  const listClass = classNames(styles.list, { [styles.activeList]: displayType === 'list' });
+  const gridClasses = classNames(styles.grid, { [styles.activeGrid]: displayType === 'grid' });
+  const listClasses = classNames(styles.list, { [styles.activeList]: displayType === 'list' });
 
   const [value, setValue] = useState('Genre');
 
   const changeSelectHandler = useCallback((newValue) => {
     setValue(newValue);
-  });
+  }, [setValue]);
 
   return (
     <div className={styles.navBarWrapper}>
@@ -42,17 +42,18 @@ const FilmNavigation = ({
           data={genres}
           value={value}
           onChange={changeSelectHandler}
+          keyField='id'
         />
       </div>
       <div className={styles.orientationItem}>
         <Icon
           name='grid'
-          className={gridClass}
+          className={gridClasses}
           onClick={() => changeDisplayType('grid')}
         />
         <Icon
           name='list'
-          className={listClass}
+          className={listClasses}
           onClick={() => changeDisplayType('list')}
         />
       </div>
