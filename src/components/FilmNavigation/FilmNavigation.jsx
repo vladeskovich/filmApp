@@ -12,14 +12,22 @@ const FilmNavigation = ({
   displayType,
   changeDisplayType,
 }) => {
-  const gridClasses = classNames(styles.grid, { [styles.activeGrid]: displayType === 'grid' });
-  const listClasses = classNames(styles.list, { [styles.activeList]: displayType === 'list' });
-
   const [value, setValue] = useState('Genre');
 
   const changeSelectHandler = useCallback((newValue) => {
     setValue(newValue);
   }, [setValue]);
+
+  const clickGridHandler = useCallback(() => {
+    changeDisplayType('grid');
+  }, [changeDisplayType]);
+
+  const clickListHandler = useCallback(() => {
+    changeDisplayType('list');
+  }, [changeDisplayType]);
+
+  const gridClasses = classNames(styles.grid, { [styles.activeGrid]: displayType === 'grid' });
+  const listClasses = classNames(styles.list, { [styles.activeList]: displayType === 'list' });
 
   return (
     <div className={styles.navBarWrapper}>
@@ -49,12 +57,12 @@ const FilmNavigation = ({
         <Icon
           name='grid'
           className={gridClasses}
-          onClick={() => changeDisplayType('grid')}
+          onClick={clickGridHandler}
         />
         <Icon
           name='list'
           className={listClasses}
-          onClick={() => changeDisplayType('list')}
+          onClick={clickListHandler}
         />
       </div>
     </div>

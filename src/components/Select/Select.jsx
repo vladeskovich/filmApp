@@ -14,9 +14,10 @@ const Select = ({
   optionValueProp,
   keyField,
 }) => {
-  const [visibleList, setVisibleList] = useState(false);
   const history = useHistory();
-  const arrowClass = classNames(styles.arrow, { [styles.rotateArrow]: visibleList });
+
+  const [visibleList, setVisibleList] = useState(false);
+
   const openSelectHandler = useCallback(() => {
     setVisibleList(true);
   }, [setVisibleList]);
@@ -32,8 +33,11 @@ const Select = ({
     onChange(optionValueProp ? data[itemIndex][optionValueProp] : data[itemIndex]);
 
     history.push(`/genre/${data[itemIndex][keyField]}`);
+
     setVisibleList(false);
   }, [onChange, data, optionValueProp, setVisibleList, keyField, history]);
+
+  const arrowClass = classNames(styles.arrow, { [styles.rotateArrow]: visibleList });
 
   return (
     <div
