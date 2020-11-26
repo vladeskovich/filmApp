@@ -6,6 +6,7 @@ import Typography from '../Typography';
 import Button from '../Button';
 import List from '../List';
 import Rating from '../Rating';
+import imagePath from '../../constants/imagePath';
 import styles from './ListItem.scss';
 
 const ListItem = ({
@@ -15,8 +16,9 @@ const ListItem = ({
   voteCount,
   overview,
 }) => {
-  const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
+  const urlImage = imagePath + slideImage;
   const threeGenres = genres.slice(0, 3);
+
   return (
     <div className={styles.filmContainer}>
       <Image

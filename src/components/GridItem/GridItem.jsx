@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
+import imagePath from '../../constants/imagePath';
 import Image from '../Image';
 import Icon from '../Icon';
 import Typography from '../Typography';
@@ -17,9 +18,10 @@ const GridItem = ({
   voteCount,
   overview,
 }) => {
-  const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
+  const urlImage = imagePath + slideImage;
   const [showInfo, setShow] = useState(false);
   const threeGenres = genres.slice(0, 3);
+
   return (
     <div className={styles.filmContainer}>
       <Image

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import List from '../List';
 import SECTIONS from '../../constants/filmSections';
 import Icon from '../Icon';
+import Select from '../Select';
 import styles from './FilmNavigation.scss';
 
 const FilmNavigation = ({
@@ -45,39 +46,24 @@ const FilmNavigation = ({
             />
           </div>
           {visibleList && (
-            <div className={styles.containerGenresList}
-                 onMouseLeave={() => {
-                   setVisibleList(false);
-                 }
-                 }>
-              <List
-                data={genres}
-                direction="vertical"
-                className={styles.genresList}
-                itemClassName={styles.containerSortItem}
-              >{(genre) => (
-                <NavLink
-                  onClick={() => setGenre(genre.name)}
-                  to={genre.name}
-                >
-                  {genre.name}
-                </NavLink>
-              )}
-              </List>
-            </div>
+            <Select
+            genres={genres}
+            setVisibleList={setVisibleList}
+            setGenre={setGenre}
+            />
           )}
         </div>
       </div>
       <div className={styles.orientationItem}>
         <Icon
           name='grid'
-          className={classNames(styles.grid, { [styles.activeGrid]: displayType.grid })}
-          onClick={() => changeDisplayType({ grid: true })}
+          className={classNames(styles.grid, { [styles.activeGrid]: displayType === 'grid' })}
+          onClick={() => changeDisplayType('grid')}
         />
         <Icon
           name='list'
-          className={classNames(styles.list, { [styles.activeList]: displayType.list })}
-          onClick={() => changeDisplayType({ list: true })}
+          className={classNames(styles.list, { [styles.activeList]: displayType === 'list' })}
+          onClick={() => changeDisplayType('list')}
         />
       </div>
     </div>

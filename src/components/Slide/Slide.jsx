@@ -6,6 +6,7 @@ import Genres from '../Genre';
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Rating from '../Rating';
 import styles from './Slide.scss';
+import imagePath from '../../constants/imagePath';
 
 const Slide = ({
   slideImage,
@@ -15,7 +16,7 @@ const Slide = ({
   genres,
 }) => {
   const time = getTimeFromMin(runtime);
-  const urlImage = `http://image.tmdb.org/t/p/w1280${slideImage}`;
+  const urlImage = imagePath + slideImage;
 
   return (
     <div style={{ backgroundImage: `url(${urlImage})` }} className={styles.slide}>

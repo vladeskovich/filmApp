@@ -10,15 +10,16 @@ export const initialState = {
 const films = (state = initialState, action) => {
   switch (action.type) {
     case SET_STATUS:
+      const { loading } = action;
       return {
         ...state,
-        loading: action.loading,
+        loading,
       };
     case SET_FILM:
-      debugger;
+      const { data } = action;
       return {
         ...state,
-        films: [...state.films, ...action.data.map((film) => ({
+        films: [...state.films, ...data.map((film) => ({
           slideImage: film.backdrop_path,
           titleFilm: film.original_title,
           voteCount: film.vote_average,

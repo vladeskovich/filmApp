@@ -12,12 +12,13 @@ const FilmList = ({
   displayType,
 }) => {
   const classes = classNames(styles.filmsContainer,
-    { [styles.grid]: displayType.grid },
-    { [styles.list]: displayType.list });
+    { [styles.grid]: displayType === 'grid' },
+    { [styles.list]: displayType === 'list' });
   return (
     <div className={classes}>
-      {displayType.grid && films.map((film) => <GridItem displayType={displayType} {...film}/>)}
-      {displayType.list && films.map((film) => <ListItem displayType={displayType} {...film}/>)}
+      {displayType === 'list'
+        ? films.map((film) => <ListItem displayType={displayType} {...film}/>)
+        : films.map((film) => <GridItem displayType={displayType} {...film}/>)}
       {loading && <Preloader/>}
     </div>
   );

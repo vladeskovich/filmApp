@@ -1,0 +1,31 @@
+@import "src/styles/constants";
+
+.containerSortItem {
+  display: flex;
+
+  a {
+    padding: 8px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: $blue-main;
+  }
+
+  a.active {
+    border-bottom: 2px solid $blue-main;
+    color: $blue-main;
+  }
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.containerGenresList {
+  position: absolute;
+  top: 34px;
+  height: 170px;
+  width: 100%;
+  overflow: scroll;
+  transition: all 0.45s ease;
+  background-color: inherit;
+}

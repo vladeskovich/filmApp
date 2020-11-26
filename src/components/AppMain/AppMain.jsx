@@ -40,7 +40,7 @@ const AppMain = ({
       name: 'Crime',
     },
   ];
-  const [displayType, changeDisplayType] = useState({ grid: true, list: false });
+  const [displayType, changeDisplayType] = useState('grid');
 
   return (
     <div className={styles.appMain}>
