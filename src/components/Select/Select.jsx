@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import List from '../List';
@@ -12,10 +11,7 @@ const Select = ({
   onChange,
   optionLabelProp,
   optionValueProp,
-  keyField,
 }) => {
-  const history = useHistory();
-
   const [visibleList, setVisibleList] = useState(false);
 
   const openSelectHandler = useCallback(() => {
@@ -31,11 +27,8 @@ const Select = ({
 
     const { target: { dataset: { itemIndex } } } = event;
     onChange(optionValueProp ? data[itemIndex][optionValueProp] : data[itemIndex]);
-
-    history.push(`/genre/${data[itemIndex][keyField]}`);
-
     setVisibleList(false);
-  }, [onChange, data, optionValueProp, setVisibleList, keyField, history]);
+  }, [onChange, data, optionValueProp, setVisibleList]);
 
   const arrowClass = classNames(styles.arrow, { [styles.rotateArrow]: visibleList });
 

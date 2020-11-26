@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import classNames from 'classnames';
 import List from '../List';
 import SECTIONS from '../../constants/filmSections';
@@ -12,11 +12,16 @@ const FilmNavigation = ({
   displayType,
   changeDisplayType,
 }) => {
+  const history = useHistory();
   const [value, setValue] = useState('Genre');
 
   const changeSelectHandler = useCallback((newValue) => {
+    const { id } = newValue;
+
+    history.push(`/genre/${id}`);
+
     setValue(newValue);
-  }, [setValue]);
+  }, [setValue, history]);
 
   const clickGridHandler = useCallback(() => {
     changeDisplayType('grid');
@@ -50,10 +55,9 @@ const FilmNavigation = ({
           data={genres}
           value={value}
           onChange={changeSelectHandler}
-          keyField='id'
         />
       </div>
-      //TODO one function
+      TODO one function
       <div className={styles.orientationItem}>
         <Icon
           data-list-type='grid'
