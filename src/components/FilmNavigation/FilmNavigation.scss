@@ -32,45 +32,6 @@
   }
 }
 
-.navBarGenres {
-  display: flex;
-  position: relative;
-  width: 200px;
-  justify-content: space-between;
-  z-index: 1;
-
-  &:hover {
-    background-color: white;
-  }
-}
-
-.containerGenresItem {
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: $blue-main;
-}
-
-.arrowContainer {
-  display: flex;
-  align-items: center;
-  padding-right: 10px;
-}
-
-.arrow {
-  width: 15px;
-  height: 15px;
-  fill: $blue-main;
-  transition: all 0.45s ease-out;
-}
-
-.arrow.rotateArrow {
-  transform: rotate(180deg);
-  transition: all 0.45s ease-out;
-}
-
-
 ::-webkit-scrollbar {
   display: none;
 }

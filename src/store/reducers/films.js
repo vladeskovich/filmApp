@@ -8,7 +8,8 @@ export const initialState = {
 };
 
 const films = (state = initialState, action) => {
-  switch (action.type) {
+  const { type } = action;
+  switch (type) {
     case SET_STATUS:
       const { loading } = action;
       return {

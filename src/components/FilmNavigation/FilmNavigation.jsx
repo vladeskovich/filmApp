@@ -11,10 +11,7 @@ const FilmNavigation = ({
   genres,
   displayType,
   changeDisplayType,
-}) => {
-  const [activeGenre, setGenre] = useState('Genre');
-  const [visibleList, setVisibleList] = useState(false);
-  return (
+}) => (
     <div className={styles.navBarWrapper}>
       <div className={styles.navBar}>
         <List
@@ -31,28 +28,7 @@ const FilmNavigation = ({
           </NavLink>
         )}
         </List>
-        <div
-          className={styles.navBarGenres}
-          onClick={() => setVisibleList(true)}
-        >
-          <div className={styles.containerGenresItem}>
-            <span>{activeGenre}</span>
-          </div>
-          <div className={styles.arrowContainer}>
-            <Icon
-              name='arrow'
-              className={classNames(styles.arrow, { [styles.rotateArrow]: visibleList })
-              }
-            />
-          </div>
-          {visibleList && (
-            <Select
-            genres={genres}
-            setVisibleList={setVisibleList}
-            setGenre={setGenre}
-            />
-          )}
-        </div>
+        <Select genres={genres}/>
       </div>
       <div className={styles.orientationItem}>
         <Icon
@@ -67,7 +43,6 @@ const FilmNavigation = ({
         />
       </div>
     </div>
-  );
-};
+);
 
 export default FilmNavigation;
