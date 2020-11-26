@@ -24,6 +24,7 @@ const Icon = ({
   name,
   className,
   onClick,
+  ...props
 }) => {
   const classes = classNames(styles.icon, className);
   const Component = icons[name.toLowerCase()];
@@ -32,6 +33,7 @@ const Icon = ({
     <Component
       onClick={onClick}
       className={classes}
+      {...props}
     />
   );
 };

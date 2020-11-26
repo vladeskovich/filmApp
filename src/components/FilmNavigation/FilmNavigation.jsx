@@ -55,11 +55,13 @@ const FilmNavigation = ({
       </div>
       <div className={styles.orientationItem}>
         <Icon
+          data-list-type='grid'
           name='grid'
           className={gridClasses}
           onClick={clickGridHandler}
         />
         <Icon
+          data-list-type='list'
           name='list'
           className={listClasses}
           onClick={clickListHandler}
