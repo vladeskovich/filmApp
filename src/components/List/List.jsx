@@ -25,7 +25,7 @@ const List = ({
             key={id || index}
             className={itemClassName}
           >
-            {children(elem)}
+            {children(elem, index)}
           </li>
         );
       })}

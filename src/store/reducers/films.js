@@ -8,16 +8,15 @@ export const initialState = {
 };
 
 const films = (state = initialState, action) => {
-  const { type } = action;
+  const { type, loading, data } = action;
+
   switch (type) {
     case SET_STATUS:
-      const { loading } = action;
       return {
         ...state,
         loading,
       };
     case SET_FILM:
-      const { data } = action;
       return {
         ...state,
         films: [...state.films, ...data.map((film) => ({

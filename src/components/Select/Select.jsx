@@ -1,54 +1,84 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useCallback, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import List from '../List';
 import Icon from '../Icon';
 import styles from './Select.scss';
 
 const Select = ({
-  genres,
+  data,
+  value,
+  onChange,
+  optionLabelProp,
+  optionValueProp,
 }) => {
-  const [activeGenre, setGenre] = useState('Genre');
   const [visibleList, setVisibleList] = useState(false);
+  const history = useHistory();
+  const arrowClass = classNames(styles.arrow, { [styles.rotateArrow]: visibleList });
+  const openSelectHandler = useCallback(() => {
+    setVisibleList(true);
+  }, [setVisibleList]);
+
+  const closeSelectHandler = useCallback(() => {
+    setVisibleList(false);
+  }, [setVisibleList]);
+
+  const clickItemHandler = useCallback((event) => {
+    event.stopPropagation();
+
+    const { target: { dataset: { itemIndex } } } = event;
+    onChange(optionValueProp ? data[itemIndex][optionLabelProp] : data[itemIndex]);
+
+    history.push(`/genre/${data[itemIndex][optionValueProp]}`);
+    setVisibleList(false);
+  }, [onChange, data, optionValueProp, setVisibleList]);
+
   return (
     <div
       className={styles.navBarGenres}
-      onClick={() => setVisibleList(true)}
+      onClick={openSelectHandler}
+      onMouseLeave={closeSelectHandler}
     >
       <div className={styles.containerGenresItem}>
-        <span>{activeGenre}</span>
+        <span>{value[optionLabelProp] || value}</span>
       </div>
       <div className={styles.arrowContainer}>
         <Icon
           name='arrow'
-          className={classNames(styles.arrow, { [styles.rotateArrow]: visibleList })
-          }
+          className={arrowClass}
         />
       </div>
       {visibleList && (
         <div className={styles.containerGenresList}
-             onMouseLeave={() => {
-               setVisibleList(false);
-             }
-             }>
+        >
           <List
-            data={genres}
+            data={data}
             direction="vertical"
-            className={styles.genresList}
             itemClassName={styles.containerSortItem}
-          >{(genre) => (
-            <NavLink
-              onClick={() => setGenre(genre.name)}
-              to={genre.name}
+          >{(item, index) => (
+            <div
+              onClick={clickItemHandler}
+              data-item-index={index}
             >
-              {genre.name}
-            </NavLink>
+              {item[optionLabelProp]}
+            </div>
           )}
           </List>
         </div>
       )}
     </div>
   );
+};
+
+Select.propTypes = {
+  optionLabelProp: PropTypes.string,
+  optionValueProp: PropTypes.string,
+};
+
+Select.defaultProps = {
+  optionLabelProp: 'name',
+  optionValueProp: 'id',
 };
 
 export default Select;

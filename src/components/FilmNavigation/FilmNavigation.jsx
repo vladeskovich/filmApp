@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import List from '../List';
@@ -11,7 +11,17 @@ const FilmNavigation = ({
   genres,
   displayType,
   changeDisplayType,
-}) => (
+}) => {
+  const gridClass = classNames(styles.grid, { [styles.activeGrid]: displayType === 'grid' });
+  const listClass = classNames(styles.list, { [styles.activeList]: displayType === 'list' });
+
+  const [value, setValue] = useState('Genre');
+
+  const changeSelectHandler = useCallback((newValue) => {
+    setValue(newValue);
+  });
+
+  return (
     <div className={styles.navBarWrapper}>
       <div className={styles.navBar}>
         <List
@@ -28,21 +38,26 @@ const FilmNavigation = ({
           </NavLink>
         )}
         </List>
-        <Select genres={genres}/>
+        <Select
+          data={genres}
+          value={value}
+          onChange={changeSelectHandler}
+        />
       </div>
       <div className={styles.orientationItem}>
         <Icon
           name='grid'
-          className={classNames(styles.grid, { [styles.activeGrid]: displayType === 'grid' })}
+          className={gridClass}
           onClick={() => changeDisplayType('grid')}
         />
         <Icon
           name='list'
-          className={classNames(styles.list, { [styles.activeList]: displayType === 'list' })}
+          className={listClass}
           onClick={() => changeDisplayType('list')}
         />
       </div>
     </div>
-);
+  );
+};
 
 export default FilmNavigation;

@@ -6,6 +6,7 @@
   width: 200px;
   justify-content: space-between;
   z-index: 1;
+  cursor: pointer;
 
   &:hover {
     background-color: white;
@@ -40,21 +41,17 @@
 
 .containerSortItem {
   display: flex;
+  padding: 8px 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: $blue-main;
 
-  a {
-    padding: 8px 10px;
-    font-size: 16px;
-    text-decoration: none;
-    color: $blue-main;
-  }
-
-  a.active {
-    border-bottom: 2px solid $blue-main;
-    color: $blue-main;
+  div {
+    width: 100%;
   }
 
   &:hover {
-    background-color: white;
+    background-color: #f1f1f1;
   }
 }
 
