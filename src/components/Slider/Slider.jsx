@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { initializeFilms } from '../../store/actions/films';
 import SliderNavigation from '../SliderNavigation';
 import Slide from '../Slide';
 import styles from './Slider.scss';
@@ -10,24 +9,14 @@ const mapStateToProps = (state) => ({
   films: state.films.films,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  initializeFilms: () => {
-    dispatch(initializeFilms());
-  },
-}
-);
-
 const Slider = ({
-  onClick,
   films,
-  initializeFilms,
 }) => {
   const dataSlide = films.slice(0, 5);
   const [slide, setSlide] = useState(0);
-  useEffect(() => {
-    initializeFilms();
-  }, []);
-  setTimeout(() => (slide < 4 ? setSlide(slide + 1) : setSlide(0)), 3000);
+
+  // setTimeout(() => (slide < 4 ? setSlide(slide + 1) : setSlide(0)), 3000);
+
   return (
     <div className={styles.slider}>
       <Slide {...dataSlide[slide]}/>
@@ -46,4 +35,4 @@ Slider.propTypes = {
 
 Slider.defaultProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Slider);
+export default connect(mapStateToProps, null)(Slider);

@@ -1,3 +1,5 @@
+@import "src/styles/constants";
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -5,6 +7,19 @@
   bottom: 0;
   right: 0;
   z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.closeContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.closeIcon {
+  width: 25px;
+  height: 25px;
+  fill: $absolute-white;
 }
 
 .modalWindow {

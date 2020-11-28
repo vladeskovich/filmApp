@@ -7,5 +7,8 @@
       }
     </style>
   </defs>
+
   <path id="Shape_1_copy_4" data-name="Shape 1 copy 4" class="cls-1" d="M370,1011.5H356.22L352,998l-4.219,13.5H334l11.165,8.37L340.75,1034l11.25-9,11.25,9-4.414-14.13Z" transform="translate(-334 -998)"/>
+  <path id="Star" class="cls-1" d="M170,1011.5H156.22L152,998l-4.219,13.5H134l11.165,8.37L140.75,1034l11.25-9,11.25,9-4.414-14.13Z" transform="translate(-134 -998)"/>
+
 </svg>
