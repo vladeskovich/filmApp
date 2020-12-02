@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Portal from '../Portal';
-import Icon from '../Icon';
 import styles from './Dialog.scss';
 
 const Dialog = ({
@@ -9,20 +8,22 @@ const Dialog = ({
   isOpen,
   onCancel,
   children,
+  loadingVideo,
 }) => (
   <>
     {isOpen && (
       <Portal>
-        <div className={styles.modalOverlay}>
-          <div className={styles.closeContainer}>
-            <Icon
-              name='cross'
-              className={styles.closeIcon}
-              onClick={onCancel}
-            />
-          </div>
+        {console.log(data, isOpen, loadingVideo)}
+        <div
+          className={styles.modalOverlay}
+          onClick={onCancel}
+        >
           <div className={styles.modalWindow}>
-            {children(data)}
+            {React.cloneElement(children, {
+              data,
+              onCancel,
+              loadingVideo,
+            })}
           </div>
         </div>
       </Portal>

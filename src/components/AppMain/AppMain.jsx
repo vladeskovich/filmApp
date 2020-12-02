@@ -8,11 +8,13 @@ import styles from './AppMain.scss';
 const mapStateToProps = (state) => ({
   films: state.films.films,
   loading: state.films.loading,
+  videos: state.videos.videos,
 });
 
 const AppMain = ({
   films,
   loading,
+  showDialogHandler,
 }) => {
   const genres = [
     {
@@ -55,10 +57,10 @@ const AppMain = ({
             films={films}
             loading={loading}
             displayType={displayType}
+            showDialogHandler={showDialogHandler}
           />
           : <Preloader/>
         }
-
       </div>
     </div>
   );

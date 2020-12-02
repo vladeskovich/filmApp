@@ -1,9 +1,5 @@
-import * as axios from 'axios';
-
-const instance = axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
-});
-const API_KEY = '2758a9f62ef8d91cfef2a83be3b876bb';
+import instance from '../../constants/instance';
+import API_KEY from '../../constants/api';
 
 export const initializeFilms = () => (dispatch, getState) => {
   const { films: { numberPage } } = getState();

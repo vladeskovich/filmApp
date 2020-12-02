@@ -16,7 +16,6 @@ const films = (state = initialState, action) => {
         loading,
       };
     case SET_FILM:
-      debugger;
       return {
         ...state,
         films: [...state.films, ...data.map((film) => ({

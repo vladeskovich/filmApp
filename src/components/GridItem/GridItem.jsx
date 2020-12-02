@@ -86,12 +86,13 @@ const GridItem = ({
         >
           {overview}
         </Typography>
-        <Button
-          onClick={onOpen}
-          color='blue'
-          outline
-          className={styles.watchNow}
-        >Watch Now</Button>
+          <Button
+            data-item-id={id}
+            onClick={onOpen}
+            color='blue'
+            outline
+            className={styles.watchNow}
+          >Watch Now</Button>
       </div>
     </div>);
 };

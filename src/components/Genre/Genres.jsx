@@ -17,7 +17,6 @@ const Genres = ({
       <List
         data={data}
         direction="horizontal"
-        ordered={false}
         className={styles.genresContainer}
         itemClassName={styles.genreItem}
       >{(genre) => (
