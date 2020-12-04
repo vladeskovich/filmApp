@@ -17,7 +17,7 @@ const GridItem = ({
   slideImage,
   voteCount,
   overview,
-  onOpen,
+  onShow,
   id,
 }) => {
   const urlImage = imagePath + slideImage;
@@ -88,7 +88,7 @@ const GridItem = ({
         </Typography>
           <Button
             data-item-id={id}
-            onClick={onOpen}
+            onClick={onShow}
             color='blue'
             outline
             className={styles.watchNow}

@@ -13,7 +13,7 @@ const FilmNavigation = ({
   changeDisplayType,
 }) => {
   const history = useHistory();
-  const [value, setValue] = useState('Genre');
+  const [value, setValue] = useState('Genres');
 
   const changeSelectHandler = useCallback((newValue) => {
     const { id } = newValue;

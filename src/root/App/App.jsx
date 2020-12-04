@@ -2,16 +2,19 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
 import Slider from '../../components/Slider';
-import AppMain from '../../components/AppMain';
 import { initializeFilms } from '../../store/actions/films';
 import Video from '../../components/Video';
 import Dialog from '../../components/Dialog';
 import { getVideos } from '../../store/actions/video';
+import FilmNavigation from '../../components/FilmNavigation';
+import FilmList from '../../components/FilmList';
+import Preloader from '../../components/Preloader';
 import styles from './App.scss';
 
 const mapStateToProps = (state) => ({
   videos: state.videos.videos,
-  loadingVideo: state.videos.loadingVideo,
+  films: state.films.films,
+  loading: state.films.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -28,9 +31,40 @@ const App = ({
   initializeFilms,
   getVideos,
   videos,
-  loadingVideo,
+  films,
+  loading,
 }) => {
-  // debugger;
+  debugger;
+  const [visibleDialog, setVisibleDialog] = useState(false);
+  const [displayType, changeDisplayType] = useState('grid');
+
+  const genres = [
+    {
+      id: 28,
+      name: 'Action',
+    },
+    {
+      id: 12,
+      name: 'Adventure',
+    },
+    {
+      id: 16,
+      name: 'Animation',
+    },
+    {
+      id: 35,
+      name: 'Comedy',
+    },
+    {
+      id: 80,
+      name: 'Crime',
+    },
+    {
+      id: 82,
+      name: 'Crime',
+    },
+  ];
+
   useEffect(() => {
     initializeFilms();
     window.addEventListener('scroll', (event) => {
@@ -40,24 +74,38 @@ const App = ({
     });
   }, []);
 
-  const [visibleDialog, setVisibleDialog] = useState(false);
-  const { key: videoKey } = videos[0] || 1;
-
-  console.log(visibleDialog);
   const toogleDialogHandler = useCallback((event) => {
     const { target: { dataset: { itemId } } } = event;
-    console.log('123');
-    toogleDialogHandler();
-    getVideos(itemId);
+    const newVisibleDialog = !visibleDialog;
+    if (newVisibleDialog) {
+      getVideos(itemId);
+    }
+    setVisibleDialog(newVisibleDialog);
   }, [setVisibleDialog, visibleDialog, getVideos]);
-
+  console.log(111);
   return (
     <div className={styles.appWrapper}>
       <Slider/>
-      <AppMain showDialogHandler={toogleDialogHandler}/>
+      <div className={styles.appMain}>
+        <div className={styles.appMainContent}>
+          <FilmNavigation
+            genres={genres}
+            displayType={displayType}
+            changeDisplayType={changeDisplayType}
+          />
+          {films.length !== 0
+            ? <FilmList
+              films={films}
+              loading={loading}
+              displayType={displayType}
+              onShow={toogleDialogHandler}
+            />
+            : <Preloader/>
+          }
+        </div>
+      </div>
       <Dialog
-        loadingVideo={loadingVideo}
-        data={videoKey}
+        data={videos}
         isOpen={visibleDialog}
         onCancel={toogleDialogHandler}
       >

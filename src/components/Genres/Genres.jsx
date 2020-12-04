@@ -1,23 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Typography from '../Typography';
 import List from '../List';
 
 import styles from './Genres.scss';
 
 const Genres = ({
-  className,
   data,
-}) => {
-  const classes = classNames(styles.genre, className);
-
-  return (
-    <div className={styles.genreWrapper}>
+}) => (
+    <div className={styles.genresContainer}>
       <List
         data={data}
         direction="horizontal"
-        className={styles.genresContainer}
         itemClassName={styles.genreItem}
       >{(genre) => (
         <Typography
@@ -29,8 +23,7 @@ const Genres = ({
       </List>
     </div>
 
-  );
-};
+);
 
 Genres.propTypes = {
   data: PropTypes.string,

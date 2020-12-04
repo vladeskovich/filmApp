@@ -10,7 +10,7 @@ const FilmList = ({
   films,
   loading,
   displayType,
-  showDialogHandler,
+  onShow,
 }) => {
   const classes = classNames(styles.filmsContainer,
     { [styles.grid]: displayType === 'grid' },
@@ -24,7 +24,7 @@ const FilmList = ({
           <GridItem
             displayType={displayType}
             {...film}
-            onOpen={showDialogHandler}
+            onShow={onShow}
           />
         ))}
       {loading && <Preloader/>}

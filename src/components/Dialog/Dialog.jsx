@@ -8,12 +8,10 @@ const Dialog = ({
   isOpen,
   onCancel,
   children,
-  loadingVideo,
 }) => (
   <>
     {isOpen && (
       <Portal>
-        {console.log(data, isOpen, loadingVideo)}
         <div
           className={styles.modalOverlay}
           onClick={onCancel}
@@ -22,7 +20,6 @@ const Dialog = ({
             {React.cloneElement(children, {
               data,
               onCancel,
-              loadingVideo,
             })}
           </div>
         </div>

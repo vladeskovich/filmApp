@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import Typography from '../Typography';
-import Genres from '../Genre';
+import Genres from '../Genres';
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Rating from '../Rating';
 import styles from './Slide.scss';
