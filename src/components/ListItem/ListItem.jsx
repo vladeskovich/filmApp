@@ -15,6 +15,7 @@ const ListItem = ({
   slideImage,
   voteCount,
   overview,
+  onShow,
   id,
 }) => {
   const urlImage = imagePath + slideImage;
@@ -52,6 +53,8 @@ const ListItem = ({
           {overview}
         </Typography>
         <Button
+          data-item-id={id}
+          onClick={onShow}
           color='blue'
           outline
           className={styles.watchNow}

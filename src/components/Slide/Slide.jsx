@@ -14,6 +14,8 @@ const Slide = ({
   voteCount,
   runtime,
   genres,
+  onShow,
+  id,
 }) => {
   const time = getTimeFromMin(runtime);
   const urlImage = imagePath + slideImage;
@@ -36,6 +38,8 @@ const Slide = ({
         </div>
         <div className={styles.slideButtons}>
           <Button
+            data-item-id={id}
+            onClick={onShow}
             color='blue'
             outline
           >Watch Now</Button>

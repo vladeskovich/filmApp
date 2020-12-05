@@ -57,7 +57,6 @@ const FilmNavigation = ({
           onChange={changeSelectHandler}
         />
       </div>
-      TODO one function
       <div className={styles.orientationItem}>
         <Icon
           data-list-type='grid'

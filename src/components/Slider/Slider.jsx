@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 
 const Slider = ({
   films,
+  onShow,
 }) => {
   const dataSlide = films.slice(0, 5);
   const [slide, setSlide] = useState(0);
@@ -19,7 +20,10 @@ const Slider = ({
 
   return (
     <div className={styles.slider}>
-      <Slide {...dataSlide[slide]}/>
+      <Slide
+        {...dataSlide[slide]}
+        onShow={onShow}
+      />
       <SliderNavigation
         activeSlide={slide}
         onClick={setSlide}

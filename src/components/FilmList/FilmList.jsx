@@ -19,7 +19,13 @@ const FilmList = ({
   return (
     <div className={classes}>
       {displayType === 'list'
-        ? films.map((film) => <ListItem displayType={displayType} {...film}/>)
+        ? films.map((film) => (
+          <ListItem
+            displayType={displayType}
+            {...film}
+            onShow={onShow}
+          />
+        ))
         : films.map((film) => (
           <GridItem
             displayType={displayType}

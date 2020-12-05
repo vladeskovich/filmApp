@@ -5,6 +5,7 @@ import Slider from '../../components/Slider';
 import { initializeFilms } from '../../store/actions/films';
 import Video from '../../components/Video';
 import Dialog from '../../components/Dialog';
+import Footer from '../../components/Footer';
 import { getVideos, resetVideo } from '../../store/actions/video';
 import { initializeGenres } from '../../store/actions/genres';
 import FilmNavigation from '../../components/FilmNavigation';
@@ -45,7 +46,6 @@ const App = ({
   loading,
   genres,
 }) => {
-  debugger;
   const [visibleDialog, setVisibleDialog] = useState(false);
   const [displayType, changeDisplayType] = useState('grid');
 
@@ -70,7 +70,7 @@ const App = ({
 
   return (
     <div className={styles.appWrapper}>
-      <Slider/>
+      <Slider onShow={toogleDialogHandler}/>
       <div className={styles.appMain}>
         <div className={styles.appMainContent}>
           <FilmNavigation
@@ -89,6 +89,7 @@ const App = ({
           }
         </div>
       </div>
+      <Footer/>
       <Dialog
         data={videos}
         isOpen={visibleDialog}
