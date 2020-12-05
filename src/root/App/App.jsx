@@ -5,7 +5,8 @@ import Slider from '../../components/Slider';
 import { initializeFilms } from '../../store/actions/films';
 import Video from '../../components/Video';
 import Dialog from '../../components/Dialog';
-import { getVideos } from '../../store/actions/video';
+import { getVideos, resetVideo } from '../../store/actions/video';
+import { initializeGenres } from '../../store/actions/genres';
 import FilmNavigation from '../../components/FilmNavigation';
 import FilmList from '../../components/FilmList';
 import Preloader from '../../components/Preloader';
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => ({
   videos: state.videos.videos,
   films: state.films.films,
   loading: state.films.loading,
+  genres: state.genres.genres,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -24,49 +26,32 @@ const mapDispatchToProps = (dispatch) => ({
   getVideos: (id) => {
     dispatch(getVideos(id));
   },
+  resetVideo: (resetData) => {
+    dispatch(resetVideo(resetData));
+  },
+  initializeGenres: () => {
+    dispatch(initializeGenres());
+  },
 }
 );
 
 const App = ({
   initializeFilms,
+  initializeGenres,
   getVideos,
+  resetVideo,
   videos,
   films,
   loading,
+  genres,
 }) => {
   debugger;
   const [visibleDialog, setVisibleDialog] = useState(false);
   const [displayType, changeDisplayType] = useState('grid');
 
-  const genres = [
-    {
-      id: 28,
-      name: 'Action',
-    },
-    {
-      id: 12,
-      name: 'Adventure',
-    },
-    {
-      id: 16,
-      name: 'Animation',
-    },
-    {
-      id: 35,
-      name: 'Comedy',
-    },
-    {
-      id: 80,
-      name: 'Crime',
-    },
-    {
-      id: 82,
-      name: 'Crime',
-    },
-  ];
-
   useEffect(() => {
     initializeFilms();
+    initializeGenres();
     window.addEventListener('scroll', (event) => {
       if (Math.round(window.scrollY + window.innerHeight) === document.body.scrollHeight) {
         initializeFilms();
@@ -82,7 +67,7 @@ const App = ({
     }
     setVisibleDialog(newVisibleDialog);
   }, [setVisibleDialog, visibleDialog, getVideos]);
-  console.log(111);
+
   return (
     <div className={styles.appWrapper}>
       <Slider/>
@@ -108,6 +93,7 @@ const App = ({
         data={videos}
         isOpen={visibleDialog}
         onCancel={toogleDialogHandler}
+        onReset={resetVideo}
       >
         <Video/>
       </Dialog>

@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Typography from '../Typography';
 import styles from './Error.scss';
 
-const Error = () => (
-      <Typography className={styles.errorMessage}>Error Loading</Typography>
+const Error = ({
+  text,
+}) => (
+      <Typography className={styles.errorMessage}>{text}</Typography>
 );
 
 Error.propTypes = {};

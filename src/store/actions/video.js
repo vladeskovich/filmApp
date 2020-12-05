@@ -10,3 +10,7 @@ export const getVideos = (id) => (dispatch) => {
       dispatch({ type: 'SET_VIDEOS', data: results });
     });
 };
+
+export const resetVideo = (resetData) => (dispatch) => {
+  dispatch({ type: 'SET_VIDEOS', data: resetData });
+};

@@ -5,11 +5,12 @@ export const initialState = {
 };
 
 const genres = (state = initialState, action) => {
-  switch (action.type) {
+  const { type, data } = action;
+  switch (type) {
     case SET_GENRES:
       return {
         ...state,
-        films: action.data,
+        genres: data,
       };
     default:
       return state;

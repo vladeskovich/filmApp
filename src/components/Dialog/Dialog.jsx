@@ -8,6 +8,7 @@ const Dialog = ({
   isOpen,
   onCancel,
   children,
+  onReset,
 }) => (
   <>
     {isOpen && (
@@ -20,6 +21,7 @@ const Dialog = ({
             {React.cloneElement(children, {
               data,
               onCancel,
+              onReset,
             })}
           </div>
         </div>

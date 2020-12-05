@@ -6,23 +6,22 @@ import styles from './Video.scss';
 
 const Video = ({
   data,
+  onReset,
 }) => {
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(false);
 
   const { key } = data[0] || {};
-
   useEffect(() => {
     const id = setTimeout(() => {
-      if (data.length === 0) {
-        setShowError(true);
-      }
-    }, 5000);
+      setError({ text: 'timeout' });
+    }, 10000);
     return () => {
       clearTimeout(id);
+      onReset([]);
     };
-  }, [data]);
+  }, [onReset]);
 
-  const renderStatus = () => (showError ? <Error/> : <Preloader/>);
+  const renderStatus = () => (error ? <Error {...error}/> : <Preloader/>);
 
   return (
     key

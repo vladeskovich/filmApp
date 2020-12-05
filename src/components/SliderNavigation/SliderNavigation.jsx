@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BarItem from '../Star';
+import BarItem from '../BarItem';
 import styles from './SliderNavigation.scss';
 
 const SliderNavigation = ({
