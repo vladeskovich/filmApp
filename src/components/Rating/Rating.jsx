@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BarItem from '../Star';
+import BarItem from '../BarItem';
 import VoteCount from '../VoteCount';
 import styles from './Rating.scss';
 

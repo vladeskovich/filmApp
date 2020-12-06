@@ -17,6 +17,8 @@ const GridItem = ({
   slideImage,
   voteCount,
   overview,
+  onShow,
+  id,
 }) => {
   const urlImage = imagePath + slideImage;
   const [showInfo, setShow] = useState(false);
@@ -84,16 +86,26 @@ const GridItem = ({
         >
           {overview}
         </Typography>
-        <Button
-          color='blue'
-          outline
-          className={styles.watchNow}
-        >Watch Now</Button>
+          <Button
+            data-item-id={id}
+            onClick={onShow}
+            color='blue'
+            outline
+            className={styles.watchNow}
+          >Watch Now</Button>
       </div>
     </div>);
 };
 
-GridItem.propTypes = {};
+GridItem.propTypes = {
+  genres: PropTypes.array,
+  titleFilm: PropTypes.string,
+  slideImage: PropTypes.string,
+  voteCount: PropTypes.number,
+  overview: PropTypes.string,
+  onShow: PropTypes.node.func,
+  id: PropTypes.number,
+};
 
 GridItem.defaultProps = {};
 

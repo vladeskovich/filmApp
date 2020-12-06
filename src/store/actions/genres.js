@@ -1,13 +1,10 @@
-import * as axios from 'axios';
+import request from '../../constants/request';
 
-const instance = axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
-});
-const API_KEY = '2758a9f62ef8d91cfef2a83be3b876bb';
-
-export const initializeGenres = () => (dispatch) => {
-  instance.get(`/genre/movie/list?api_key=${API_KEY}&language=en-US&page=1`)
+export const getGenres = () => (dispatch) => {
+  request.get('/genre/movie/list')
     .then((response) => {
-      dispatch({ type: 'SET_GENRES', data: response.data.results });
+      const { data: { genres } } = response;
+
+      dispatch({ type: 'SET_GENRES', data: genres });
     });
 };

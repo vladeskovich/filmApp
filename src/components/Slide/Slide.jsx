@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import Typography from '../Typography';
-import Genres from '../Genre';
+import Genres from '../Genres';
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Rating from '../Rating';
 import styles from './Slide.scss';
@@ -14,6 +14,8 @@ const Slide = ({
   voteCount,
   runtime,
   genres,
+  onShow,
+  id,
 }) => {
   const time = getTimeFromMin(runtime);
   const urlImage = imagePath + slideImage;
@@ -36,6 +38,8 @@ const Slide = ({
         </div>
         <div className={styles.slideButtons}>
           <Button
+            data-item-id={id}
+            onClick={onShow}
             color='blue'
             outline
           >Watch Now</Button>

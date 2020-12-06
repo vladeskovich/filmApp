@@ -1,32 +1,55 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import GridItem from '../GridItem';
 import Preloader from '../Preloader';
 import ListItem from '../ListItem';
+import List from '../List';
 import styles from './FilmList.scss';
 
 const FilmList = ({
   films,
   loading,
   displayType,
+  onShow,
 }) => {
   const classes = classNames(styles.filmsContainer,
     { [styles.grid]: displayType === 'grid' },
     { [styles.list]: displayType === 'list' });
+
+  const renderList = useCallback((ItemComponent) => (
+      <List
+        data={films}
+        direction="horizontal"
+        itemClassName={styles.filmsContainerFlex}
+        className={classes}
+      >
+        {(film) => (
+          <ItemComponent
+            {...film}
+            displayType={displayType}
+            onShow={onShow}
+          />
+        )}
+      </List>
+  ), [films, displayType, onShow, classes]);
+
   return (
-    <div className={classes}>
+    <>
       {displayType === 'list'
-        ? films.map((film) => <ListItem displayType={displayType} {...film}/>)
-        : films.map((film) => <GridItem displayType={displayType} {...film}/>)}
+        ? renderList(ListItem)
+        : renderList(GridItem)
+      }
       {loading && <Preloader/>}
-    </div>
+    </>
   );
 };
 
 FilmList.propTypes = {
-  checked: PropTypes.bool,
-  name: PropTypes.string,
+  films: PropTypes.array,
+  loading: PropTypes.bool,
+  displayType: PropTypes.string,
+  onShow: PropTypes.func,
 };
 
 FilmList.defaultProps = {};

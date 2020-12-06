@@ -1,11 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import List from '../List';
 import SECTIONS from '../../constants/filmSections';
 import Icon from '../Icon';
 import Select from '../Select';
 import styles from './FilmNavigation.scss';
+import GridItem from '../GridItem';
 
 const FilmNavigation = ({
   genres,
@@ -57,7 +59,6 @@ const FilmNavigation = ({
           onChange={changeSelectHandler}
         />
       </div>
-      TODO one function
       <div className={styles.orientationItem}>
         <Icon
           data-list-type='grid'
@@ -75,5 +76,13 @@ const FilmNavigation = ({
     </div>
   );
 };
+
+GridItem.propTypes = {
+  genres: PropTypes.array,
+  displayType: PropTypes.string,
+  changeDisplayType: PropTypes.func,
+};
+
+GridItem.defaultProps = {};
 
 export default FilmNavigation;

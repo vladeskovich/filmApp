@@ -25,6 +25,7 @@ const films = (state = initialState, action) => {
           runtime: film.runtime,
           genres: film.genres,
           overview: film.overview,
+          id: film.id,
         }))],
         numberPage: state.numberPage + 1,
       };

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BarItem from '../Star';
+import BarItem from '../BarItem';
 import styles from './SliderNavigation.scss';
 
 const SliderNavigation = ({
@@ -23,8 +23,8 @@ const SliderNavigation = ({
 };
 
 SliderNavigation.propTypes = {
-  data: PropTypes.string,
-  className: PropTypes.string,
+  activeSlide: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 SliderNavigation.defaultProps = {};

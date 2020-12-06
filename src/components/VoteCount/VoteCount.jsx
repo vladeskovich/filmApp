@@ -20,7 +20,7 @@ const VoteCount = ({
 };
 
 VoteCount.propTypes = {
-  convertedRating: PropTypes.number,
+  rating: PropTypes.number,
   className: PropTypes.string,
 };
 
