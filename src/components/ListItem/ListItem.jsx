@@ -64,7 +64,15 @@ const ListItem = ({
   );
 };
 
-ListItem.propTypes = {};
+ListItem.propTypes = {
+  genres: PropTypes.array,
+  titleFilm: PropTypes.string,
+  slideImage: PropTypes.string,
+  voteCount: PropTypes.number,
+  overview: PropTypes.string,
+  onShow: PropTypes.node.func,
+  id: PropTypes.number,
+};
 
 ListItem.defaultProps = {};
 

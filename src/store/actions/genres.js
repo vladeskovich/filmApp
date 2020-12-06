@@ -1,8 +1,7 @@
-import instance from '../../constants/instance';
-import API_KEY from '../../constants/api';
+import request from '../../constants/request';
 
-export const initializeGenres = () => (dispatch) => {
-  instance.get(`/genre/movie/list?api_key=${API_KEY}&language=en-US&page=1`)
+export const getGenres = () => (dispatch) => {
+  request.get('/genre/movie/list')
     .then((response) => {
       const { data: { genres } } = response;
 

@@ -70,6 +70,9 @@ const Select = ({
 };
 
 Select.propTypes = {
+  data: PropTypes.array,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
   optionLabelProp: PropTypes.string,
   optionValueProp: PropTypes.string,
 };

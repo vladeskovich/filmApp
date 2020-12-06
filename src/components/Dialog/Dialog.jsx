@@ -31,7 +31,13 @@ const Dialog = ({
   </>
 );
 
-Dialog.propTypes = {};
+Dialog.propTypes = {
+  data: PropTypes.array,
+  isOpen: PropTypes.bool,
+  onCancel: PropTypes.func,
+  onReset: PropTypes.func,
+  children: PropTypes.node.func,
+};
 
 Dialog.defaultProps = {};
 

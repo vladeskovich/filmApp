@@ -9,7 +9,9 @@ const Error = ({
       <Typography className={styles.errorMessage}>{text}</Typography>
 );
 
-Error.propTypes = {};
+Error.propTypes = {
+  text: PropTypes.string,
+};
 
 Error.defaultProps = {};
 

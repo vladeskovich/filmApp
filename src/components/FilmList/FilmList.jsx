@@ -39,8 +39,10 @@ const FilmList = ({
 };
 
 FilmList.propTypes = {
-  checked: PropTypes.bool,
-  name: PropTypes.string,
+  films: PropTypes.array,
+  loading: PropTypes.bool,
+  displayType: PropTypes.string,
+  onShow: PropTypes.func,
 };
 
 FilmList.defaultProps = {};

@@ -25,19 +25,22 @@ const Video = ({
 
   return (
     key
-      ? <iframe
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${key}`}
-        frameBorder="0"
-        allow="autoplay; encrypted-media"
-        allowFullScreen
-      />
+      ? <div className={styles.videoContainer}>
+        <iframe
+          src={`https://www.youtube.com/embed/${key}`}
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
+      </div>
       : renderStatus()
   );
 };
 
-Video.propTypes = {};
+Video.propTypes = {
+  data: PropTypes.array,
+  onReset: PropTypes.func,
+};
 
 Video.defaultProps = {};
 

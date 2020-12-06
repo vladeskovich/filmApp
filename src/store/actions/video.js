@@ -1,4 +1,4 @@
-import instance from '../../constants/instance';
+import instance from '../../constants/request';
 import API_KEY from '../../constants/api';
 
 export const getVideos = (id) => (dispatch) => {

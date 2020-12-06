@@ -23,8 +23,8 @@ const SliderNavigation = ({
 };
 
 SliderNavigation.propTypes = {
-  data: PropTypes.string,
-  className: PropTypes.string,
+  activeSlide: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 SliderNavigation.defaultProps = {};

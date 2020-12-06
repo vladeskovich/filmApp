@@ -33,8 +33,8 @@ const Slider = ({
 };
 
 Slider.propTypes = {
-  className: PropTypes.string,
-  name: PropTypes.string,
+  films: PropTypes.array,
+  onShow: PropTypes.func,
 };
 
 Slider.defaultProps = {};

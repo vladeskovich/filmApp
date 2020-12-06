@@ -26,8 +26,7 @@ const Genres = ({
 );
 
 Genres.propTypes = {
-  data: PropTypes.string,
-  className: PropTypes.string,
+  data: PropTypes.array,
 };
 
 Genres.defaultProps = {};

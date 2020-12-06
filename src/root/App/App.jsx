@@ -2,12 +2,12 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
 import Slider from '../../components/Slider';
-import { initializeFilms } from '../../store/actions/films';
+import { getFilms } from '../../store/actions/films';
 import Video from '../../components/Video';
 import Dialog from '../../components/Dialog';
 import Footer from '../../components/Footer';
 import { getVideos, resetVideo } from '../../store/actions/video';
-import { initializeGenres } from '../../store/actions/genres';
+import { getGenres } from '../../store/actions/genres';
 import FilmNavigation from '../../components/FilmNavigation';
 import FilmList from '../../components/FilmList';
 import Preloader from '../../components/Preloader';
@@ -21,8 +21,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  initializeFilms: () => {
-    dispatch(initializeFilms());
+  getFilms: () => {
+    dispatch(getFilms());
   },
   getVideos: (id) => {
     dispatch(getVideos(id));
@@ -30,15 +30,15 @@ const mapDispatchToProps = (dispatch) => ({
   resetVideo: (resetData) => {
     dispatch(resetVideo(resetData));
   },
-  initializeGenres: () => {
-    dispatch(initializeGenres());
+  getGenres: () => {
+    dispatch(getGenres());
   },
 }
 );
 
 const App = ({
-  initializeFilms,
-  initializeGenres,
+  getFilms,
+  getGenres,
   getVideos,
   resetVideo,
   videos,
@@ -50,11 +50,11 @@ const App = ({
   const [displayType, changeDisplayType] = useState('grid');
 
   useEffect(() => {
-    initializeFilms();
-    initializeGenres();
+    getFilms();
+    getGenres();
     window.addEventListener('scroll', (event) => {
       if (Math.round(window.scrollY + window.innerHeight) === document.body.scrollHeight) {
-        initializeFilms();
+        getFilms();
       }
     });
   }, []);

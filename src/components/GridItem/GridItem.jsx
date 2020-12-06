@@ -97,7 +97,15 @@ const GridItem = ({
     </div>);
 };
 
-GridItem.propTypes = {};
+GridItem.propTypes = {
+  genres: PropTypes.array,
+  titleFilm: PropTypes.string,
+  slideImage: PropTypes.string,
+  voteCount: PropTypes.number,
+  overview: PropTypes.string,
+  onShow: PropTypes.node.func,
+  id: PropTypes.number,
+};
 
 GridItem.defaultProps = {};
 
