@@ -10,7 +10,7 @@ const Portal = ({
 }) => ReactDom.createPortal(children, dialogElement);
 
 Portal.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.node.func,
 };
 
 Portal.defaultProps = {};

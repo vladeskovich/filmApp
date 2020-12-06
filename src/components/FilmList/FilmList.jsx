@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import GridItem from '../GridItem';
 import Preloader from '../Preloader';
 import ListItem from '../ListItem';
+import List from '../List';
 import styles from './FilmList.scss';
 
 const FilmList = ({
@@ -17,24 +18,41 @@ const FilmList = ({
     { [styles.list]: displayType === 'list' });
 
   return (
-    <div className={classes}>
+    <>
       {displayType === 'list'
-        ? films.map((film) => (
-          <ListItem
-            displayType={displayType}
-            {...film}
-            onShow={onShow}
-          />
-        ))
-        : films.map((film) => (
-          <GridItem
-            displayType={displayType}
-            {...film}
-            onShow={onShow}
-          />
-        ))}
+        ? <List
+          data={films}
+          direction="horizontal"
+          ordered={false}
+          itemClassName={styles.filmsContainerFlex}
+          className={classes}
+        >
+          {(film) => (
+            <ListItem
+              {...film}
+              displayType={displayType}
+              onShow={onShow}
+            />
+          )}
+        </List>
+        : <List
+          data={films}
+          direction="horizontal"
+          ordered={false}
+          itemClassName={styles.filmsContainerFlex}
+          className={classes}
+        >
+          {(film) => (
+            <GridItem
+              {...film}
+              displayType={displayType}
+              onShow={onShow}
+            />
+          )}
+        </List>
+      }
       {loading && <Preloader/>}
-    </div>
+    </>
   );
 };
 

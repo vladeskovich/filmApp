@@ -27,8 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
   getVideos: (id) => {
     dispatch(getVideos(id));
   },
-  resetVideo: (resetData) => {
-    dispatch(resetVideo(resetData));
+  resetVideo: () => {
+    dispatch(resetVideo());
   },
   getGenres: () => {
     dispatch(getGenres());

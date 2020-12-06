@@ -11,13 +11,16 @@ const Video = ({
   const [error, setError] = useState(false);
 
   const { key } = data[0] || {};
+
   useEffect(() => {
     const id = setTimeout(() => {
       setError({ text: 'timeout' });
     }, 10000);
+
     return () => {
       clearTimeout(id);
-      onReset([]);
+
+      onReset();
     };
   }, [onReset]);
 

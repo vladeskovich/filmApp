@@ -1,8 +1,7 @@
-import instance from '../../constants/request';
-import API_KEY from '../../constants/api';
+import request from '../../constants/request';
 
 export const getVideos = (id) => (dispatch) => {
-  instance.get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
+  request.get(`/movie/${id}/videos`)
     .then((response) => {
       const { data: { results } } = response;
 
@@ -10,6 +9,6 @@ export const getVideos = (id) => (dispatch) => {
     });
 };
 
-export const resetVideo = (resetData) => (dispatch) => {
-  dispatch({ type: 'SET_VIDEOS', data: resetData });
+export const resetVideo = () => (dispatch) => {
+  dispatch({ type: 'SET_VIDEOS', data: [] });
 };
