@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import GridItem from '../GridItem';
@@ -17,39 +17,28 @@ const FilmList = ({
     { [styles.grid]: displayType === 'grid' },
     { [styles.list]: displayType === 'list' });
 
+  const renderList = useCallback((ItemComponent) => (
+      <List
+        data={films}
+        direction="horizontal"
+        itemClassName={styles.filmsContainerFlex}
+        className={classes}
+      >
+        {(film) => (
+          <ItemComponent
+            {...film}
+            displayType={displayType}
+            onShow={onShow}
+          />
+        )}
+      </List>
+  ), [films, displayType, onShow, classes]);
+
   return (
     <>
       {displayType === 'list'
-        ? <List
-          data={films}
-          direction="horizontal"
-          ordered={false}
-          itemClassName={styles.filmsContainerFlex}
-          className={classes}
-        >
-          {(film) => (
-            <ListItem
-              {...film}
-              displayType={displayType}
-              onShow={onShow}
-            />
-          )}
-        </List>
-        : <List
-          data={films}
-          direction="horizontal"
-          ordered={false}
-          itemClassName={styles.filmsContainerFlex}
-          className={classes}
-        >
-          {(film) => (
-            <GridItem
-              {...film}
-              displayType={displayType}
-              onShow={onShow}
-            />
-          )}
-        </List>
+        ? renderList(ListItem)
+        : renderList(GridItem)
       }
       {loading && <Preloader/>}
     </>
