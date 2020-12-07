@@ -29,7 +29,7 @@ const Typography = ({
 };
 
 Typography.propTypes = {
-  variant: PropTypes.arrayOf(Object.keys(VARIANTS)),
+  variant: PropTypes.oneOf(Object.keys(VARIANTS)),
   children: PropTypes.node.func,
   className: PropTypes.string,
   onClick: PropTypes.node.func,

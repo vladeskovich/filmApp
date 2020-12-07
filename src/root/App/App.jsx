@@ -12,6 +12,7 @@ import FilmNavigation from '../../components/FilmNavigation';
 import FilmList from '../../components/FilmList';
 import Preloader from '../../components/Preloader';
 import styles from './App.scss';
+import Routes from '../../components/Routes';
 
 const mapStateToProps = (state) => ({
   videos: state.videos.videos,
@@ -42,8 +43,6 @@ const App = ({
   getVideos,
   resetVideo,
   videos,
-  films,
-  loading,
   genres,
 }) => {
   const [visibleDialog, setVisibleDialog] = useState(false);
@@ -78,15 +77,10 @@ const App = ({
             displayType={displayType}
             changeDisplayType={changeDisplayType}
           />
-          {films.length !== 0
-            ? <FilmList
-              films={films}
-              loading={loading}
-              displayType={displayType}
-              onShow={toogleDialogHandler}
-            />
-            : <Preloader/>
-          }
+          <Routes
+            displayType={displayType}
+            onShow={toogleDialogHandler}
+          />
         </div>
       </div>
       <Footer/>
