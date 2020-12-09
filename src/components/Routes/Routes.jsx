@@ -22,7 +22,7 @@ const routes = [
     exact: true,
   },
   {
-    path: '/genre/:genreId?',
+    path: '/genre/:genreId',
     exact: true,
   },
 ];

@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useRouteMatch } from 'react-router-dom';
 import Slider from '../../components/Slider';
-import { getFilms } from '../../store/actions/films';
+import { getFilms, resetFilms } from '../../store/actions/films';
 import Video from '../../components/Video';
 import Dialog from '../../components/Dialog';
 import Footer from '../../components/Footer';
@@ -19,8 +19,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFilms: (pathname) => {
-    dispatch(getFilms(pathname));
+  getFilms: (pathname, routeParam) => {
+    dispatch(getFilms(pathname, routeParam));
+  },
+  resetFilms: () => {
+    dispatch(resetFilms());
   },
   getVideos: (id) => {
     dispatch(getVideos(id));
@@ -37,23 +40,34 @@ const mapDispatchToProps = (dispatch) => ({
 const App = ({
   getFilms,
   getGenres,
+  resetFilms,
   getVideos,
   resetVideo,
   videos,
   genres,
 }) => {
   const { pathname } = useLocation();
+  const routeParam = useRouteMatch('/genre/:genreId');
+  debugger;
   const [visibleDialog, setVisibleDialog] = useState(false);
   const [displayType, changeDisplayType] = useState('grid');
 
+  const checkEndPage = () => {
+    if (Math.round(window.scrollY + window.innerHeight + 1) === document.body.scrollHeight) {
+      debugger;
+      getFilms(pathname, routeParam);
+    }
+  };
+
   useEffect(() => {
-    getFilms(pathname);
+    getFilms(pathname, routeParam);
     getGenres();
-    window.addEventListener('scroll', (event) => {
-      if (Math.round(window.scrollY + window.innerHeight + 1) === document.body.scrollHeight) {
-        getFilms();
-      }
-    });
+    window.addEventListener('scroll', checkEndPage);
+
+    return () => {
+      resetFilms();
+      window.removeEventListener('scroll', checkEndPage);
+    };
   }, [pathname]);
 
   const toogleDialogHandler = useCallback((event) => {

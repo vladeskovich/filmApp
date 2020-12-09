@@ -9,12 +9,10 @@ import ListItem from '../ListItem';
 import List from '../List';
 import styles from './FilmList.scss';
 
-const mapStateToProps = (state) => {
-  console.log(state); return ({
-    films: state.films.films,
-    loading: state.films.loading,
-  });
-};
+const mapStateToProps = (state) => ({
+  films: state.films.films,
+  loading: state.films.loading,
+});
 
 const FilmList = ({
   films,
