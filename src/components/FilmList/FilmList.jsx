@@ -9,10 +9,12 @@ import ListItem from '../ListItem';
 import List from '../List';
 import styles from './FilmList.scss';
 
-const mapStateToProps = (state) => ({
-  films: state.films.films,
-  loading: state.films.loading,
-});
+const mapStateToProps = (state) => {
+  console.log(state); return ({
+    films: state.films.films,
+    loading: state.films.loading,
+  });
+};
 
 const FilmList = ({
   films,
@@ -23,7 +25,7 @@ const FilmList = ({
   const classes = classNames(styles.filmsContainer,
     { [styles.grid]: displayType === 'grid' },
     { [styles.list]: displayType === 'list' });
-  debugger;
+
   const renderList = useCallback((ItemComponent) => (
       <List
         data={films}
@@ -61,6 +63,4 @@ FilmList.propTypes = {
 
 FilmList.defaultProps = {};
 
-export default compose(
-  connect(mapStateToProps, null),
-)(FilmList);
+export default connect(mapStateToProps, null)(FilmList);

@@ -46,7 +46,7 @@ const FilmNavigation = ({
           itemClassName={styles.containerSortItem}
         >{(section) => (
           <NavLink
-            to={section.apiText}
+            to={section.routeText}
             activeClassName={styles.active}
           >
             {section.nameSection}

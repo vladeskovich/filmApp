@@ -1,5 +1,5 @@
 export default [
-  { nameSection: 'Trending', apiText: 'popular' },
-  { nameSection: 'Top rated', apiText: 'top_rated' },
-  { nameSection: 'Coming soon', apiText: 'upcoming' },
+  { nameSection: 'Trending', routeText: '/trending' },
+  { nameSection: 'Top rated', routeText: '/top-rated' },
+  { nameSection: 'Coming soon', routeText: '/coming-soon' },
 ];

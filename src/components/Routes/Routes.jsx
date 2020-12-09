@@ -4,21 +4,21 @@ import PropTypes from 'prop-types';
 import FilmList from '../FilmList';
 import styles from './Routes.scss';
 
-const pathes = [
+const routes = [
   {
     path: '/',
     exact: true,
   },
   {
-    path: '/popular',
+    path: '/trending',
     exact: true,
   },
   {
-    path: '/top_rated',
+    path: '/top-rated',
     exact: true,
   },
   {
-    path: '/upcoming',
+    path: '/coming-soon',
     exact: true,
   },
   {
@@ -29,7 +29,7 @@ const pathes = [
 
 const Routes = (props) => (
   <Switch>
-    {pathes.map((path) => (
+    {routes.map((path) => (
       <Route {...path} render={() => <FilmList {...props}/>}/>
     ))}
   </Switch>

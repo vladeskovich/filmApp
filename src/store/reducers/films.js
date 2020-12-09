@@ -16,6 +16,8 @@ const films = (state = initialState, action) => {
         loading,
       };
     case SET_FILM:
+      // CONCAT_FILMS
+      // RESET_FILMS
       return {
         ...state,
         films: [...state.films, ...data.map((film) => ({

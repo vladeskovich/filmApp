@@ -1,11 +1,21 @@
 import request from '../../constants/request';
 
-export const getFilms = () => (dispatch, getState) => {
+const routesMap = {
+  '': 'popular',
+  trending: 'popular',
+  'top-rated': 'top_rated',
+  'coming-soon': 'upcoming',
+  genre: 'genre',
+};
+
+export const getFilms = (pathname, resetPage) => (dispatch, getState) => {
   const { films: { numberPage } } = getState();
+  const pureRoute = pathname.slice(1);
+  const apiRoute = routesMap[pureRoute];
 
   dispatch({ type: 'SET_STATUS', loading: true });
 
-  request.get(`/movie/popular?page=${numberPage}`)
+  request.get(`/movie/${apiRoute}?page=${numberPage}`)
     .then((response) => {
       const { data: { results: films } } = response;
 
