@@ -29,10 +29,10 @@ const Typography = ({
 };
 
 Typography.propTypes = {
-  variant: PropTypes.arrayOf(Object.keys(VARIANTS)),
-  children: PropTypes.node.func,
+  variant: PropTypes.oneOf(Object.keys(VARIANTS)),
+  children: PropTypes.node,
   className: PropTypes.string,
-  onClick: PropTypes.node.func,
+  onClick: PropTypes.func,
 };
 
 Typography.defaultProps = {

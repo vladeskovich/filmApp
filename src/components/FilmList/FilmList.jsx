@@ -1,11 +1,18 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import GridItem from '../GridItem';
 import Preloader from '../Preloader';
 import ListItem from '../ListItem';
 import List from '../List';
 import styles from './FilmList.scss';
+
+const mapStateToProps = (state) => ({
+  films: state.films.films,
+  loading: state.films.loading,
+});
 
 const FilmList = ({
   films,
@@ -54,4 +61,4 @@ FilmList.propTypes = {
 
 FilmList.defaultProps = {};
 
-export default FilmList;
+export default connect(mapStateToProps, null)(FilmList);

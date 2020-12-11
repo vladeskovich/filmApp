@@ -1,28 +1,29 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
+import { useLocation, useRouteMatch } from 'react-router-dom';
 import Slider from '../../components/Slider';
-import { getFilms } from '../../store/actions/films';
+import { getFilms, resetFilms } from '../../store/actions/films';
 import Video from '../../components/Video';
 import Dialog from '../../components/Dialog';
 import Footer from '../../components/Footer';
+import FilmNavigation from '../../components/FilmNavigation';
+import Routes from '../../components/Routes';
 import { getVideos, resetVideo } from '../../store/actions/video';
 import { getGenres } from '../../store/actions/genres';
-import FilmNavigation from '../../components/FilmNavigation';
-import FilmList from '../../components/FilmList';
-import Preloader from '../../components/Preloader';
 import styles from './App.scss';
 
 const mapStateToProps = (state) => ({
   videos: state.videos.videos,
-  films: state.films.films,
-  loading: state.films.loading,
   genres: state.genres.genres,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFilms: () => {
-    dispatch(getFilms());
+  getFilms: (pathname, routeParam) => {
+    dispatch(getFilms(pathname, routeParam));
+  },
+  resetFilms: () => {
+    dispatch(resetFilms());
   },
   getVideos: (id) => {
     dispatch(getVideos(id));
@@ -39,25 +40,34 @@ const mapDispatchToProps = (dispatch) => ({
 const App = ({
   getFilms,
   getGenres,
+  resetFilms,
   getVideos,
   resetVideo,
   videos,
-  films,
-  loading,
   genres,
 }) => {
   const [visibleDialog, setVisibleDialog] = useState(false);
   const [displayType, changeDisplayType] = useState('grid');
 
+  const { pathname } = useLocation();
+  const { params: { genreId } = {} } = useRouteMatch('/genre/:genreId') || {};
+
+  const checkEndPage = useCallback(() => {
+    if (Math.round(window.scrollY + window.innerHeight + 10) >= document.body.scrollHeight) {
+      getFilms(pathname, genreId);
+    }
+  }, [getFilms, pathname, genreId]);
+
   useEffect(() => {
-    getFilms();
+    getFilms(pathname, genreId);
     getGenres();
-    window.addEventListener('scroll', (event) => {
-      if (Math.round(window.scrollY + window.innerHeight) === document.body.scrollHeight) {
-        getFilms();
-      }
-    });
-  }, []);
+    window.addEventListener('scroll', checkEndPage);
+
+    return () => {
+      resetFilms();
+      window.removeEventListener('scroll', checkEndPage);
+    };
+  }, [pathname]);
 
   const toogleDialogHandler = useCallback((event) => {
     const { target: { dataset: { itemId } } } = event;
@@ -78,15 +88,10 @@ const App = ({
             displayType={displayType}
             changeDisplayType={changeDisplayType}
           />
-          {films.length !== 0
-            ? <FilmList
-              films={films}
-              loading={loading}
-              displayType={displayType}
-              onShow={toogleDialogHandler}
-            />
-            : <Preloader/>
-          }
+          <Routes
+            displayType={displayType}
+            onShow={toogleDialogHandler}
+          />
         </div>
       </div>
       <Footer/>

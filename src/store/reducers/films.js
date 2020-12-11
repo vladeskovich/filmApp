@@ -1,4 +1,4 @@
-import { SET_FILM, SET_STATUS } from '../../constants/actionTypes';
+import { CONCAT_FILMS, RESET_FILMS, SET_STATUS } from '../../constants/actionTypes';
 
 export const initialState = {
   loading: false,
@@ -15,7 +15,7 @@ const films = (state = initialState, action) => {
         ...state,
         loading,
       };
-    case SET_FILM:
+    case CONCAT_FILMS:
       return {
         ...state,
         films: [...state.films, ...data.map((film) => ({
@@ -28,6 +28,12 @@ const films = (state = initialState, action) => {
           id: film.id,
         }))],
         numberPage: state.numberPage + 1,
+      };
+    case RESET_FILMS:
+      return {
+        ...state,
+        films: [],
+        numberPage: 1,
       };
     default:
       return state;

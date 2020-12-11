@@ -8,13 +8,15 @@ const SliderNavigation = ({
   onClick,
 }) => {
   const fiveIndicator = Array.from({ length: 5 }, (v, k) => (
-      <BarItem
-        onClick={onClick}
-        checked={activeSlide + 1}
-        name='bar'
-        id={k + 1}
-      />
+    <BarItem
+      key={k}
+      onClick={onClick}
+      activeItem={activeSlide + 1}
+      name='bar'
+      id={k + 1}
+    />
   ));
+
   return (
     <div className={styles.sliderNavigation}>
       {fiveIndicator}

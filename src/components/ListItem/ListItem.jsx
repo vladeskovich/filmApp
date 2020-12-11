@@ -45,7 +45,10 @@ const ListItem = ({
         )}
         </List>
         <div className={styles.rating}>
-          <Rating rating={voteCount}/>
+          <Rating
+            id={id}
+            rating={voteCount}
+          />
         </div>
         <Typography
           className={styles.description}

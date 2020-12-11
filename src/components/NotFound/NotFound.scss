@@ -1,0 +1,12 @@
+@import "src/styles/constants";
+
+.notFound {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: $grey-main;
+}

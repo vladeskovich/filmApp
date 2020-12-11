@@ -6,8 +6,8 @@ import List from '../List';
 import SECTIONS from '../../constants/filmSections';
 import Icon from '../Icon';
 import Select from '../Select';
-import styles from './FilmNavigation.scss';
 import GridItem from '../GridItem';
+import styles from './FilmNavigation.scss';
 
 const FilmNavigation = ({
   genres,
@@ -46,7 +46,7 @@ const FilmNavigation = ({
           itemClassName={styles.containerSortItem}
         >{(section) => (
           <NavLink
-            to={section.apiText}
+            to={section.routeText}
             activeClassName={styles.active}
           >
             {section.nameSection}
