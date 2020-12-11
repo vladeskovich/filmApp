@@ -5,8 +5,8 @@ import Typography from '../Typography';
 import Genres from '../Genres';
 import getTimeFromMin from '../../utils/getTimeFromMin';
 import Rating from '../Rating';
-import styles from './Slide.scss';
 import imagePath from '../../constants/imagePath';
+import styles from './Slide.scss';
 
 const Slide = ({
   slideImage,

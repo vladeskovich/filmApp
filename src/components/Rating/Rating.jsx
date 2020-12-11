@@ -10,6 +10,7 @@ const Rating = ({
   const convertedRating = Math.round(rating / 2);
   const renderStars = () => (Array.from({ length: 5 }, (v, k) => (
       <BarItem
+        key={k}
         name='star'
         checked={convertedRating}
         id={5 - k}

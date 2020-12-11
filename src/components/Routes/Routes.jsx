@@ -29,8 +29,12 @@ const routes = [
 
 const Routes = (props) => (
   <Switch>
-    {routes.map((path) => (
-      <Route {...path} render={() => <FilmList {...props}/>}/>
+    {routes.map((path, index) => (
+      <Route
+        key={index}
+        {...path}
+        render={() => <FilmList {...props}/>}
+      />
     ))}
   </Switch>
 );

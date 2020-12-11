@@ -48,13 +48,12 @@ const App = ({
 }) => {
   const { pathname } = useLocation();
   const routeParam = useRouteMatch('/genre/:genreId');
-  debugger;
+
   const [visibleDialog, setVisibleDialog] = useState(false);
   const [displayType, changeDisplayType] = useState('grid');
 
   const checkEndPage = () => {
-    if (Math.round(window.scrollY + window.innerHeight + 1) === document.body.scrollHeight) {
-      debugger;
+    if (Math.round(window.scrollY + window.innerHeight + 10) >= document.body.scrollHeight) {
       getFilms(pathname, routeParam);
     }
   };

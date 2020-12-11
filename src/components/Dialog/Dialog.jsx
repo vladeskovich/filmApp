@@ -36,7 +36,7 @@ Dialog.propTypes = {
   isOpen: PropTypes.bool,
   onCancel: PropTypes.func,
   onReset: PropTypes.func,
-  children: PropTypes.node.func,
+  children: PropTypes.node,
 };
 
 Dialog.defaultProps = {};

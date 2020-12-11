@@ -11,7 +11,7 @@ const Genres = ({
     <div className={styles.genresContainer}>
       <List
         data={data}
-        direction="horizontal"
+        direction='horizontal'
         itemClassName={styles.genreItem}
       >{(genre) => (
         <Typography

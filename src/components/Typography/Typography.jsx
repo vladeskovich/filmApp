@@ -30,9 +30,9 @@ const Typography = ({
 
 Typography.propTypes = {
   variant: PropTypes.oneOf(Object.keys(VARIANTS)),
-  children: PropTypes.node.func,
+  children: PropTypes.node,
   className: PropTypes.string,
-  onClick: PropTypes.node.func,
+  onClick: PropTypes.func,
 };
 
 Typography.defaultProps = {

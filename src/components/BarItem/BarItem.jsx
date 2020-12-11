@@ -7,6 +7,7 @@ const BarItem = ({
   id,
   checked,
   name,
+  ...props
 }) => {
   const checkedItem = checked === id;
   const nameId = name + id;
@@ -18,13 +19,18 @@ const BarItem = ({
         name={name}
         id={nameId}
       />
-      <label onClick={() => onClick(id - 1)} for={nameId}></label>
+      <label
+        onClick={() => onClick(id - 1)}
+        htmlFor={nameId}
+        {...props}
+      >
+      </label>
     </>
   );
 };
 
 BarItem.propTypes = {
-  checked: PropTypes.bool,
+  checked: PropTypes.number,
   name: PropTypes.string,
 };
 

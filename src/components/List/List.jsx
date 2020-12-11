@@ -34,14 +34,14 @@ const List = ({
 };
 
 List.propTypes = {
-  data: PropTypes.arrayOf([
+  data: PropTypes.arrayOf(
     PropTypes.shape({}),
     PropTypes.number,
     PropTypes.string,
-  ]),
+  ),
   itemClassName: PropTypes.string,
   children: PropTypes.func,
-  direction: PropTypes.arrayOf(['vertical', 'horizontal']),
+  direction: PropTypes.oneOf(['vertical', 'horizontal']),
   className: PropTypes.string,
   ordered: PropTypes.bool,
 };
