@@ -5,14 +5,15 @@ import VoteCount from '../VoteCount';
 import styles from './Rating.scss';
 
 const Rating = ({
+  id,
   rating,
 }) => {
   const convertedRating = Math.round(rating / 2);
   const renderStars = () => (Array.from({ length: 5 }, (v, k) => (
       <BarItem
         key={k}
-        name='star'
-        checked={convertedRating}
+        name={id}
+        activeItem={convertedRating}
         id={5 - k}
       />
   )));

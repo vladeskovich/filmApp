@@ -1,43 +1,50 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import FilmList from '../FilmList';
 import NotFound from '../NotFound';
+import FilmList from '../FilmList';
 import styles from './Routes.scss';
 
 const routes = [
   {
     path: '/',
     exact: true,
+    component: FilmList,
   },
   {
-    path: '/trending/',
+    path: '/trending',
     exact: true,
+    component: FilmList,
   },
   {
-    path: '/top-rated/',
+    path: '/top-rated',
     exact: true,
+    component: FilmList,
   },
   {
-    path: '/coming-soon/',
+    path: '/coming-soon',
     exact: true,
+    component: FilmList,
   },
   {
-    path: '/genre/:genreId/',
+    path: '/genre/:genreId',
     exact: true,
+    component: FilmList,
+  },
+  {
+    component: NotFound,
   },
 ];
 
 const Routes = (props) => (
   <Switch>
-    {routes.map((path, index) => (
+    {routes.map(({ component: Component, ...route }, index) => (
       <Route
         key={index}
-        {...path}
-        render={() => <FilmList {...props}/>}
+        {...route}
+        render={() => <Component {...props}/>}
       />
     ))}
-    <Route component={NotFound} />
   </Switch>
 );
 

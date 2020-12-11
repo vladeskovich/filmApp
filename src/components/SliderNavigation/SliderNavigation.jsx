@@ -11,11 +11,12 @@ const SliderNavigation = ({
     <BarItem
       key={k}
       onClick={onClick}
-      checked={activeSlide + 1}
+      activeItem={activeSlide + 1}
       name='bar'
       id={k + 1}
     />
   ));
+
   return (
     <div className={styles.sliderNavigation}>
       {fiveIndicator}

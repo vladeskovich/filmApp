@@ -5,23 +5,23 @@ import Input from '../Input';
 const BarItem = ({
   onClick,
   id,
-  checked,
+  activeItem,
   name,
   ...props
 }) => {
-  const checkedItem = checked === id;
-  const nameId = name + id;
+  const checkedItem = activeItem === id;
+
   return (
     <>
       <Input
         checked={checkedItem}
         type='radio'
         name={name}
-        id={nameId}
+        id={name}
       />
       <label
         onClick={() => onClick(id - 1)}
-        htmlFor={nameId}
+        htmlFor={name}
         {...props}
       >
       </label>

@@ -46,20 +46,20 @@ const App = ({
   videos,
   genres,
 }) => {
-  const { pathname } = useLocation();
-  const routeParam = useRouteMatch('/genre/:genreId');
-
   const [visibleDialog, setVisibleDialog] = useState(false);
   const [displayType, changeDisplayType] = useState('grid');
 
+  const { pathname } = useLocation();
+  const { params: { genreId } = {} } = useRouteMatch('/genre/:genreId') || {};
+
   const checkEndPage = useCallback(() => {
     if (Math.round(window.scrollY + window.innerHeight + 10) >= document.body.scrollHeight) {
-      getFilms(pathname, routeParam);
+      getFilms(pathname, genreId);
     }
-  }, [getFilms]);
+  }, [getFilms, pathname, genreId]);
 
   useEffect(() => {
-    getFilms(pathname, routeParam);
+    getFilms(pathname, genreId);
     getGenres();
     window.addEventListener('scroll', checkEndPage);
 

@@ -3,7 +3,7 @@ import styles from './NotFound.scss';
 
 const NotFound = () => (
   <div className={styles.notFound}>
-    <h2 className={styles.text}>Ресурс не найден</h2>
+    <h2 className={styles.text}>Not Found</h2>
   </div>
 );
 

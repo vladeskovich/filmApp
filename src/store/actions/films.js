@@ -7,14 +7,14 @@ const routesMap = {
   'coming-soon': 'upcoming',
 };
 
-export const getFilms = (pathname, routeParam) => (dispatch, getState) => {
+export const getFilms = (pathname, genreId) => (dispatch, getState) => {
   const { films: { numberPage } } = getState();
 
   const pureRoute = pathname.slice(1);
   const apiRoute = routesMap[pureRoute];
 
-  const filmsUrl = routeParam
-    ? `/discover/movie?page=${numberPage}&with_genres=${routeParam.params.genreId}`
+  const filmsUrl = genreId
+    ? `/discover/movie?page=${numberPage}&with_genres=${genreId}`
     : `/movie/${apiRoute}?page=${numberPage}`;
 
   dispatch({ type: 'SET_STATUS', loading: true });
