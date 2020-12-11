@@ -7,11 +7,11 @@ import { getFilms, resetFilms } from '../../store/actions/films';
 import Video from '../../components/Video';
 import Dialog from '../../components/Dialog';
 import Footer from '../../components/Footer';
+import FilmNavigation from '../../components/FilmNavigation';
+import Routes from '../../components/Routes';
 import { getVideos, resetVideo } from '../../store/actions/video';
 import { getGenres } from '../../store/actions/genres';
-import FilmNavigation from '../../components/FilmNavigation';
 import styles from './App.scss';
-import Routes from '../../components/Routes';
 
 const mapStateToProps = (state) => ({
   videos: state.videos.videos,
@@ -52,11 +52,11 @@ const App = ({
   const [visibleDialog, setVisibleDialog] = useState(false);
   const [displayType, changeDisplayType] = useState('grid');
 
-  const checkEndPage = () => {
+  const checkEndPage = useCallback(() => {
     if (Math.round(window.scrollY + window.innerHeight + 10) >= document.body.scrollHeight) {
       getFilms(pathname, routeParam);
     }
-  };
+  }, [getFilms]);
 
   useEffect(() => {
     getFilms(pathname, routeParam);

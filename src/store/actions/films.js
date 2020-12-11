@@ -9,18 +9,17 @@ const routesMap = {
 
 export const getFilms = (pathname, routeParam) => (dispatch, getState) => {
   const { films: { numberPage } } = getState();
-  // const { params: { genreId = 1 } } = routeParam;
-  // const genreId = null;
+
   const pureRoute = pathname.slice(1);
   const apiRoute = routesMap[pureRoute];
 
-  const stringRequest = routeParam
+  const filmsUrl = routeParam
     ? `/discover/movie?page=${numberPage}&with_genres=${routeParam.params.genreId}`
     : `/movie/${apiRoute}?page=${numberPage}`;
 
   dispatch({ type: 'SET_STATUS', loading: true });
 
-  request.get(stringRequest)
+  request.get(filmsUrl)
     .then((response) => {
       const { data: { results: films } } = response;
 

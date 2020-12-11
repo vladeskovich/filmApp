@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FilmList from '../FilmList';
+import NotFound from '../NotFound';
 import styles from './Routes.scss';
 
 const routes = [
@@ -10,19 +11,19 @@ const routes = [
     exact: true,
   },
   {
-    path: '/trending',
+    path: '/trending/',
     exact: true,
   },
   {
-    path: '/top-rated',
+    path: '/top-rated/',
     exact: true,
   },
   {
-    path: '/coming-soon',
+    path: '/coming-soon/',
     exact: true,
   },
   {
-    path: '/genre/:genreId',
+    path: '/genre/:genreId/',
     exact: true,
   },
 ];
@@ -36,6 +37,7 @@ const Routes = (props) => (
         render={() => <FilmList {...props}/>}
       />
     ))}
+    <Route component={NotFound} />
   </Switch>
 );
 
