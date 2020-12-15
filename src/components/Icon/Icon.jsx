@@ -41,8 +41,11 @@ const Icon = ({
 Icon.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
-Icon.defaultProps = {};
+Icon.defaultProps = {
+  name: 'Cross',
+};
 
 export default Icon;

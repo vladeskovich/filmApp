@@ -15,7 +15,6 @@ const Button = ({
   const classes = classNames(
     styles.button,
     className,
-    type,
     { [styles.outline]: outline },
     { [styles[color]]: color },
   );
@@ -34,10 +33,9 @@ const Button = ({
 Button.propTypes = {
   type: PropTypes.oneOf(['submit', 'button']),
   className: PropTypes.string,
-  value: PropTypes.string,
   color: PropTypes.string,
-  bool: PropTypes.bool,
   onClick: PropTypes.func,
+  outline: PropTypes.bool,
 };
 
 Button.defaultProps = {

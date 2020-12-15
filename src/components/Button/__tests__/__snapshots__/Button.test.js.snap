@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render Button component with props 1`] = `
+<Button
+  className="buttonTest"
+  color="blue"
+  outline={true}
+  type="submit"
+>
+  <button
+    className="Button__button_1WSrj4ig buttonTest Button__outline_2AOV17gW Button__blue_2Th7Zabu"
+    type="submit"
+  >
+    Ok
+  </button>
+</Button>
+`;
+
+exports[`Button should render Button component without props 1`] = `
+<Button
+  type="button"
+>
+  <button
+    className="Button__button_1WSrj4ig"
+    type="button"
+  >
+    Ok
+  </button>
+</Button>
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render Icon component 1`] = `
+<Icon
+  name="Cross"
+>
+  <SvgCross
+    className="Icon__icon_2eyT0_yM"
+  >
+    <svg
+      className="Icon__icon_2eyT0_yM"
+      data-file-name="SvgCross"
+    />
+  </SvgCross>
+</Icon>
+`;
+
+exports[`Icon should render Icon component with props 1`] = `
+<Icon
+  className="buttonTest"
+  name="Star"
+  onClick={[Function]}
+>
+  <SvgStar
+    className="Icon__icon_2eyT0_yM buttonTest"
+    onClick={[Function]}
+  >
+    <svg
+      className="Icon__icon_2eyT0_yM buttonTest"
+      data-file-name="SvgStar"
+      onClick={[Function]}
+    />
+  </SvgStar>
+</Icon>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should render List component  1`] = `
+<ol
+  class="List__list_3qljzsty test-list List__vertical_2QU82bDP"
+>
+  <li
+    class="test-list"
+  >
+    <div>
+      Action
+    </div>
+  </li>
+</ol>
+`;
+
+exports[`List should render List component  2`] = `
+<ul
+  class="List__list_3qljzsty test-list List__vertical_2QU82bDP"
+>
+  <li
+    class="test-list"
+  >
+    <div>
+      Action
+    </div>
+  </li>
+</ul>
+`;

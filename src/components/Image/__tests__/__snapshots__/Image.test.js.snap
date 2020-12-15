@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image should render Image component with props 1`] = `
+<Image
+  className="buttonTest"
+  src="assets/image"
+>
+  <img
+    className="Image__image_2mBUrUSU buttonTest"
+    src="assets/image"
+  />
+</Image>
+`;
+
+exports[`Image should render Image component without props 1`] = `
+<Image>
+  <img
+    className="Image__image_2mBUrUSU"
+  />
+</Image>
+`;

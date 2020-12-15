@@ -23,7 +23,6 @@ Image.propTypes = {
   src: PropTypes.string,
 };
 
-Image.defaultProps = {
-};
+Image.defaultProps = {};
 
 export default Image;
