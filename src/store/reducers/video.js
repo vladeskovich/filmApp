@@ -5,10 +5,9 @@ export const initialState = {
 };
 
 const videos = (state = initialState, action) => {
-  const { data, type, loadingVideo } = action;
+  const { data, type } = action;
   switch (type) {
     case SET_VIDEOS:
-      debugger;
       return {
         ...state,
         videos: data,

@@ -30,8 +30,10 @@ const BarItem = ({
 };
 
 BarItem.propTypes = {
-  checked: PropTypes.number,
-  name: PropTypes.string,
+  onClick: PropTypes.func,
+  id: PropTypes.number,
+  activeItem: PropTypes.number,
+  name: PropTypes.number,
 };
 
 BarItem.defaultProps = {};
