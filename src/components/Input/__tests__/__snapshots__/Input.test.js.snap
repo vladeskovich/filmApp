@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render Input component with props 1`] = `
+<input
+  className="Input__input_1c_Lh1r3 inputTest radio"
+  handleChange={[Function]}
+  type="radio"
+/>
+`;

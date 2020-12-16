@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should render List component  1`] = `
+<ol
+  className="List__list_3qljzsty test-list List__vertical_2QU82bDP"
+>
+  <li
+    className="test-list"
+    key="1"
+  >
+    <div>
+      Action
+    </div>
+  </li>
+</ol>
+`;
+
+exports[`List should render List component  2`] = `
+<List
+  className="test-list"
+  data={
+    Array [
+      Object {
+        "name": "Action",
+      },
+    ]
+  }
+  direction="vertical"
+  itemClassName="test-list"
+  ordered={false}
+>
+  <ul
+    className="List__list_3qljzsty test-list List__vertical_2QU82bDP"
+  >
+    <li
+      className="test-list"
+      key="0"
+    >
+      <div>
+        Action
+      </div>
+    </li>
+  </ul>
+</List>
+`;
+
+exports[`List should render List component without props 1`] = `""`;

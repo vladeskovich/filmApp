@@ -11,7 +11,7 @@ import Cross from '../../assets/icons/cross.svg';
 
 import styles from './Icon.scss';
 
-const icons = {
+export const icons = {
   play: Play,
   list: List,
   grid: Grid,
@@ -41,8 +41,11 @@ const Icon = ({
 Icon.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
-Icon.defaultProps = {};
+Icon.defaultProps = {
+  name: 'Cross',
+};
 
 export default Icon;

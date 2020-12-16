@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography should render Typography component with props 1`] = `
+<h1
+  className="Typography__typography_1E76fqYp test-text"
+>
+  Ok
+</h1>
+`;
+
+exports[`Typography should render Typography component without props 1`] = `
+<p
+  className="Typography__typography_1E76fqYp"
+>
+  Ok
+</p>
+`;

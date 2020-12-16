@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VoteCount should render VoteCount component props 1`] = `
+<Typography
+  className="VoteCount__voteCount_2wL5CqNf test-vote"
+  variant="body"
+>
+  4
+</Typography>
+`;

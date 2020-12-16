@@ -10,6 +10,7 @@ const VoteCount = ({
 }) => {
   const classes = classNames(styles.voteCount, className);
   const ratingRound = Math.round((rating / 2) * 10) / 10;
+
   return (
     <Typography
       className={classes}

@@ -17,6 +17,7 @@ const Rating = ({
         id={5 - k}
       />
   )));
+
   return (
     <div className={styles.ratingContainer}>
       <div className={styles.ratingInStars}>
@@ -30,8 +31,8 @@ const Rating = ({
 };
 
 Rating.propTypes = {
-  data: PropTypes.string,
-  className: PropTypes.string,
+  id: PropTypes.number,
+  rating: PropTypes.number,
 };
 
 Rating.defaultProps = {};

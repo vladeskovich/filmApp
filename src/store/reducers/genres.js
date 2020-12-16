@@ -1,4 +1,4 @@
-const SET_GENRES = 'SET_GENRES';
+import { SET_GENRES } from '../../constants/actionTypes';
 
 export const initialState = {
   genres: [],

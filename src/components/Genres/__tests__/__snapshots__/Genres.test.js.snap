@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Genres should render Genres component with props 1`] = `
+<Genres
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "name": "Action",
+      },
+    ]
+  }
+>
+  <div
+    className="Genres__genresContainer_32eh6Y_C"
+  >
+    <List
+      data={
+        Array [
+          Object {
+            "id": 1,
+            "name": "Action",
+          },
+        ]
+      }
+      direction="horizontal"
+      itemClassName="Genres__genreItem_1437y2lU"
+      ordered={false}
+    >
+      <ul
+        className="List__list_3qljzsty List__horizontal_1mt9lNJ-"
+      >
+        <li
+          className="Genres__genreItem_1437y2lU"
+          key="1"
+        >
+          <Typography
+            className="Genres__genre_25L8dYmX"
+            variant="body"
+          >
+            <p
+              className="Typography__typography_1E76fqYp Genres__genre_25L8dYmX"
+            >
+              Action
+            </p>
+          </Typography>
+        </li>
+      </ul>
+    </List>
+  </div>
+</Genres>
+`;

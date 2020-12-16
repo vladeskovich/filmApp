@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render Button component with props 1`] = `
+<button
+  className="Button__button_1WSrj4ig buttonTest Button__outline_2AOV17gW Button__blue_2Th7Zabu"
+  type="submit"
+>
+  Ok
+</button>
+`;

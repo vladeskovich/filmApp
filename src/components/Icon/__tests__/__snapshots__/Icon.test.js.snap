@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render Icon component 1`] = `
+<SvgCross
+  className="Icon__icon_2eyT0_yM"
+/>
+`;
+
+exports[`Icon should render Icon component with props 1`] = `
+<SvgStar
+  className="Icon__icon_2eyT0_yM buttonTest"
+  onClick={[Function]}
+/>
+`;

@@ -73,7 +73,7 @@ ListItem.propTypes = {
   slideImage: PropTypes.string,
   voteCount: PropTypes.number,
   overview: PropTypes.string,
-  onShow: PropTypes.node.func,
+  onShow: PropTypes.func,
   id: PropTypes.number,
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import Typography from '../Typography';
@@ -21,7 +21,13 @@ const Slide = ({
   const urlImage = imagePath + slideImage;
 
   return (
-    <div style={{ backgroundImage: `url(${urlImage})` }} className={styles.slide}>
+    <div style={{
+      backgroundImage: slideImage
+        ? `url(${urlImage})`
+        : 'none',
+    }}
+         className={styles.slide}
+    >
       <div className={styles.slideTop}></div>
       <div className={styles.slideBottom}>
         <div className={styles.slideInfo}>
@@ -52,6 +58,7 @@ const Slide = ({
     </div>
   );
 };
+
 Slide.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
@@ -63,7 +70,7 @@ Slide.propTypes = {
 };
 
 Slide.defaultProps = {
-  slideImage: ' ',
+  slideImage: '',
   titleFilm: ' ',
   voteCount: 0,
   runtime: 0,

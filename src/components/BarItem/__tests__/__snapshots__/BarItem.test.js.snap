@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BarItem should render BarItem component 1`] = `
+<Fragment>
+  <Input
+    checked={false}
+    id="slider-navigation"
+    name="slider-navigation"
+    onChange={[Function]}
+    type="radio"
+  />
+  <label
+    data-id={3}
+    htmlFor="slider-navigation"
+    onClick={[Function]}
+  />
+</Fragment>
+`;

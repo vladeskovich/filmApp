@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slide should render Slide component with props 1`] = `
+<div
+  className="Slide__slide_1PvkpWrD"
+  style={
+    Object {
+      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/w56545447547745)",
+    }
+  }
+>
+  <div />
+  <div
+    className="Slide__slideBottom_2VWBG3Wm"
+  >
+    <div
+      className="Slide__slideInfo_3a__zWUv"
+    >
+      <div>
+        <Typography
+          className="Slide__textTitle_14gSXKlP"
+          variant="body"
+        >
+          INFERNO
+        </Typography>
+      </div>
+      <Genres
+        data={
+          Array [
+            Object {
+              "name": "Action",
+            },
+            Object {
+              "name": "Adventure",
+            },
+          ]
+        }
+      />
+      <div
+        className="Slide__wrapperRuntimeFilm_36X8-1RM"
+      >
+        <Typography
+          className="Slide__runtimeFilm_2NI41r4E"
+          variant="body"
+        >
+          | 
+          2
+          h 
+          25
+          m
+        </Typography>
+      </div>
+      <Rating
+        rating={8}
+      />
+    </div>
+    <div
+      className="Slide__slideButtons_29LU2FWG"
+    >
+      <Button
+        color="blue"
+        data-item-id={1}
+        onClick={[Function]}
+        outline={true}
+        type="button"
+      >
+        Watch Now
+      </Button>
+      <Button
+        color="none"
+        outline={true}
+        type="button"
+      >
+        View Info
+      </Button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slide should render Slide component with props 2`] = `
+<div
+  className="Slide__slide_1PvkpWrD"
+  style={
+    Object {
+      "backgroundImage": "none",
+    }
+  }
+>
+  <div />
+  <div
+    className="Slide__slideBottom_2VWBG3Wm"
+  >
+    <div
+      className="Slide__slideInfo_3a__zWUv"
+    >
+      <div>
+        <Typography
+          className="Slide__textTitle_14gSXKlP"
+          variant="body"
+        >
+          INFERNO
+        </Typography>
+      </div>
+      <Genres
+        data={
+          Array [
+            Object {
+              "name": "Action",
+            },
+            Object {
+              "name": "Adventure",
+            },
+          ]
+        }
+      />
+      <div
+        className="Slide__wrapperRuntimeFilm_36X8-1RM"
+      >
+        <Typography
+          className="Slide__runtimeFilm_2NI41r4E"
+          variant="body"
+        >
+          | 
+          2
+          h 
+          25
+          m
+        </Typography>
+      </div>
+      <Rating
+        rating={8}
+      />
+    </div>
+    <div
+      className="Slide__slideButtons_29LU2FWG"
+    >
+      <Button
+        color="blue"
+        data-item-id={1}
+        onClick={[Function]}
+        outline={true}
+        type="button"
+      >
+        Watch Now
+      </Button>
+      <Button
+        color="none"
+        outline={true}
+        type="button"
+      >
+        View Info
+      </Button>
+    </div>
+  </div>
+</div>
+`;
