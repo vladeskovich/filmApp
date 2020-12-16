@@ -21,7 +21,7 @@ describe('Input', () => {
       target: { value: 'test-value' },
     };
 
-    const component = shallow(<Input handleChange={mockCallBack}/>);
+    const component = shallow(<Input onChange={mockCallBack}/>);
 
     component.find('input').simulate('change', event);
 

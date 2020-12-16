@@ -15,6 +15,10 @@ const List = ({
   const classes = classNames(styles.list, className, { [styles[direction]]: direction });
   const Root = ordered ? 'ol' : 'ul';
 
+  if (!data.length) {
+    return null;
+  }
+
   return (
     <Root className={classes}>
       {data.map((elem, index) => {
@@ -47,6 +51,7 @@ List.propTypes = {
 };
 
 List.defaultProps = {
+  data: [],
   direction: 'vertical',
   ordered: false,
 };

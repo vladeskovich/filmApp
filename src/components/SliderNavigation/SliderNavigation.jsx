@@ -12,7 +12,7 @@ const SliderNavigation = ({
       key={k}
       onClick={onClick}
       activeItem={activeSlide + 1}
-      name={1}
+      name="slider-navigation"
       id={k + 1}
     />
   ));
@@ -28,7 +28,5 @@ SliderNavigation.propTypes = {
   activeSlide: PropTypes.number,
   onClick: PropTypes.func,
 };
-
-SliderNavigation.defaultProps = {};
 
 export default SliderNavigation;

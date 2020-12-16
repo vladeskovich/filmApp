@@ -51,5 +51,11 @@ describe('films', () => {
 
     expect(state.films.length).toBe(0);
     expect(state.loading).toBe(false);
+
+    state = films(undefined, {
+      type: 'RESET_FILMS',
+    });
+
+    expect(state.numberPage).toBe(1);
   });
 });

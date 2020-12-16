@@ -1,4 +1,5 @@
 import genres from '../genres';
+import films from '../films';
 
 const initialState = {
   genres: [],
@@ -32,5 +33,11 @@ describe('genres', () => {
     });
 
     expect(state.genres.length).toBe(0);
+
+    state = genres(undefined, {
+      type: 'SET_GENRES',
+    });
+
+    expect(state.genres).toBe(undefined);
   });
 });

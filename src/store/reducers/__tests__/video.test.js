@@ -32,5 +32,11 @@ describe('Videos', () => {
     });
 
     expect(state.videos.length).toBe(0);
+
+    state = video(undefined, {
+      type: 'SET_VIDEOS',
+    });
+
+    expect(state.videos).toBe(undefined);
   });
 });

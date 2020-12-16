@@ -31,9 +31,9 @@ const GridItem = ({
         src={urlImage}
       />
       <div className={styles.selectAction}>
-        <NavLink
-          to='/play'
-          className={styles.linkPlay}
+        <div
+          onClick={onShow}
+          data-item-id={id}
         >
           <Icon
             name='play'
@@ -43,7 +43,7 @@ const GridItem = ({
             className={styles.playNowText}
           >Play Now
           </Typography>
-        </NavLink>
+        </div>
         <Button
           onClick={() => setShow(true)}
           outline
@@ -86,13 +86,13 @@ const GridItem = ({
         >
           {overview}
         </Typography>
-          <Button
-            data-item-id={id}
-            onClick={onShow}
-            color='blue'
-            outline
-            className={styles.watchNow}
-          >Watch Now</Button>
+        <Button
+          data-item-id={id}
+          onClick={onShow}
+          color='blue'
+          outline
+          className={styles.watchNow}
+        >Watch Now</Button>
       </div>
     </div>);
 };
@@ -106,7 +106,5 @@ GridItem.propTypes = {
   onShow: PropTypes.func,
   id: PropTypes.number,
 };
-
-GridItem.defaultProps = {};
 
 export default GridItem;

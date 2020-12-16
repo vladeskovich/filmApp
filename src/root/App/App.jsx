@@ -70,7 +70,7 @@ const App = ({
   }, [pathname]);
 
   const toogleDialogHandler = useCallback((event) => {
-    const { target: { dataset: { itemId } } } = event;
+    const { currentTarget: { dataset: { itemId } } } = event;
     const newVisibleDialog = !visibleDialog;
 
     if (newVisibleDialog) {

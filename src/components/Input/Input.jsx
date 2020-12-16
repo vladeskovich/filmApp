@@ -7,7 +7,7 @@ import styles from './Input.scss';
 const Input = ({
   type,
   className,
-  handleChange,
+  onChange,
   ...props
 }) => {
   const classes = classNames(styles.input, className, type);
@@ -16,7 +16,7 @@ const Input = ({
     <input
       type={type}
       className={classes}
-      onChange={handleChange}
+      onChange={onChange}
       {...props}
     />
   );

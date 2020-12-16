@@ -20,4 +20,11 @@ describe('Slide', () => {
 
     expect(component).toMatchSnapshot();
   });
+
+  it('should render Slide component with props', () => {
+    const { slideImage, ...otherProps } = props;
+    const component = shallow(<Slide {...otherProps}/>);
+
+    expect(component).toMatchSnapshot();
+  });
 });

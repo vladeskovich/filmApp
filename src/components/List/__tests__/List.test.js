@@ -2,6 +2,13 @@ import React from 'react';
 import List from '../List';
 
 describe('List', () => {
+  it('should render List component without props', () => {
+    const component = shallow(<List>{() => {}}</List>);
+
+    expect(component.find('ul').length).toEqual(0);
+    expect(component).toMatchSnapshot();
+  });
+
   it('should render List component ', () => {
     const props = {
       data: [
@@ -13,11 +20,13 @@ describe('List', () => {
       ordered: true,
     };
 
-    const component = shallow(<List {...props}>{(element) => (
-      <div>{element.name}</div>
-    )
-    }
-    </List>);
+    const component = shallow(
+      <List {...props}>
+        {(element) => (
+          <div>{element.name}</div>
+        )}
+      </List>,
+    );
 
     expect(component).toMatchSnapshot();
   });
@@ -33,13 +42,16 @@ describe('List', () => {
       ordered: false,
     };
 
-    const component = mount(<List {...props}>{(element) => (
-      <div>{element.name}</div>
-    )
-    }
-    </List>);
+    const component = mount(
+      <List {...props}>
+        {(element) => (
+          <div>{element.name}</div>
+        )}
+      </List>,
+    );
 
     expect(component.find('ul').length).toBe(1);
+    expect(component.find('li').length).toBe(1);
     expect(component).toMatchSnapshot();
   });
 });

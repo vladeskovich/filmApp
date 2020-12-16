@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon';
+import Icon, { icons } from '../Icon';
 
 describe('Icon', () => {
   const props = {
@@ -18,5 +18,15 @@ describe('Icon', () => {
     const component = shallow(<Icon {...props}/>);
 
     expect(component).toMatchSnapshot();
+  });
+
+  it('should check by tag name', () => {
+    Object
+      .keys(icons)
+      .map((icon) => {
+        const component = mount(<Icon name={icon}/>);
+
+        expect(component.find('svg').length).toBe(1);
+      });
   });
 });

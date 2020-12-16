@@ -43,3 +43,5 @@ exports[`List should render List component  2`] = `
   </ul>
 </List>
 `;
+
+exports[`List should render List component without props 1`] = `""`;
