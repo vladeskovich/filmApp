@@ -12,7 +12,7 @@ const SliderNavigation = ({
       key={k}
       onClick={onClick}
       activeItem={activeSlide + 1}
-      name='bar'
+      name={1}
       id={k + 1}
     />
   ));

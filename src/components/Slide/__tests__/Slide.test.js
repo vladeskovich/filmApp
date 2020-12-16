@@ -14,12 +14,10 @@ describe('Slide', () => {
     onShow: () => {},
     id: 1,
   };
-  it('should render Slide component ', () => {
-    const component = shallow(<Slide/>);
-    expect(component).toMatchSnapshot();
-  });
+
   it('should render Slide component with props', () => {
     const component = shallow(<Slide {...props}/>);
+
     expect(component).toMatchSnapshot();
   });
 });

@@ -1,53 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input should call onChange method 1`] = `
-<input
-  className="Input__input_1c_Lh1r3 text"
-  onChange={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "preventDefault": [Function],
-            "target": Object {
-              "value": "test-value",
-            },
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  type="text"
-/>
-`;
-
 exports[`Input should render Input component with props 1`] = `
-<Input
-  className="inputTest"
-  handleChange={[Function]}
+<input
+  className="Input__input_1c_Lh1r3 inputTest radio"
+  onChange={[Function]}
   type="radio"
->
-  <input
-    className="Input__input_1c_Lh1r3 inputTest radio"
-    onChange={[Function]}
-    type="radio"
-  />
-</Input>
-`;
-
-exports[`Input should render Input component without props 1`] = `
-<Input
-  type="text"
->
-  <input
-    className="Input__input_1c_Lh1r3 text"
-    type="text"
-  />
-</Input>
+/>
 `;

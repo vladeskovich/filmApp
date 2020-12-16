@@ -9,6 +9,7 @@ describe('Rating', () => {
 
   it('should render Rating component with props', () => {
     const component = shallow(<Rating {...props}/>);
+
     expect(component).toMatchSnapshot();
   });
 });

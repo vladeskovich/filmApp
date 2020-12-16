@@ -13,14 +13,12 @@ const Typography = ({
   variant,
   className,
   children,
-  onClick,
 }) => {
   const classes = classNames(styles.typography, className);
   const Component = VARIANTS[variant];
 
   return (
     <Component
-      onClick={onClick}
       className={classes}
     >
       {children}
@@ -32,7 +30,6 @@ Typography.propTypes = {
   variant: PropTypes.oneOf(Object.keys(VARIANTS)),
   children: PropTypes.node,
   className: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 Typography.defaultProps = {

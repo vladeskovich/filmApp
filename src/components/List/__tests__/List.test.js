@@ -13,10 +13,12 @@ describe('List', () => {
       ordered: true,
     };
 
-    const component = render(<List {...props}>{(element) => (
+    const component = shallow(<List {...props}>{(element) => (
       <div>{element.name}</div>
     )
-    }</List>);
+    }
+    </List>);
+
     expect(component).toMatchSnapshot();
   });
 
@@ -31,10 +33,13 @@ describe('List', () => {
       ordered: false,
     };
 
-    const component = render(<List {...props}>{(element) => (
+    const component = mount(<List {...props}>{(element) => (
       <div>{element.name}</div>
     )
-    }</List>);
+    }
+    </List>);
+
+    expect(component.find('ul').length).toBe(1);
     expect(component).toMatchSnapshot();
   });
 });

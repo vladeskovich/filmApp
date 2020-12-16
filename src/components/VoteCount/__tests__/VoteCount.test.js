@@ -8,7 +8,7 @@ describe('VoteCount', () => {
   };
 
   it('should render VoteCount component props', () => {
-    const component = mount(<VoteCount {...props}/>);
+    const component = shallow(<VoteCount {...props}/>);
 
     expect(component).toMatchSnapshot();
   });

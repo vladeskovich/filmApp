@@ -8,14 +8,8 @@ describe('Input', () => {
     handleChange: () => {},
   };
 
-  it('should render Input component without props', () => {
-    const component = mount(<Input/>);
-
-    expect(component).toMatchSnapshot();
-  });
-
   it('should render Input component with props', () => {
-    const component = mount(<Input {...props}/>);
+    const component = shallow(<Input {...props}/>);
 
     expect(component).toMatchSnapshot();
   });
@@ -32,6 +26,5 @@ describe('Input', () => {
     component.find('input').simulate('change', event);
 
     expect(mockCallBack).toBeCalledWith(event);
-    expect(component).toMatchSnapshot();
   });
 });

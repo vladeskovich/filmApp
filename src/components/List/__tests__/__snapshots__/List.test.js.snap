@@ -2,10 +2,11 @@
 
 exports[`List should render List component  1`] = `
 <ol
-  class="List__list_3qljzsty test-list List__vertical_2QU82bDP"
+  className="List__list_3qljzsty test-list List__vertical_2QU82bDP"
 >
   <li
-    class="test-list"
+    className="test-list"
+    key="1"
   >
     <div>
       Action
@@ -15,15 +16,30 @@ exports[`List should render List component  1`] = `
 `;
 
 exports[`List should render List component  2`] = `
-<ul
-  class="List__list_3qljzsty test-list List__vertical_2QU82bDP"
+<List
+  className="test-list"
+  data={
+    Array [
+      Object {
+        "name": "Action",
+      },
+    ]
+  }
+  direction="vertical"
+  itemClassName="test-list"
+  ordered={false}
 >
-  <li
-    class="test-list"
+  <ul
+    className="List__list_3qljzsty test-list List__vertical_2QU82bDP"
   >
-    <div>
-      Action
-    </div>
-  </li>
-</ul>
+    <li
+      className="test-list"
+      key="0"
+    >
+      <div>
+        Action
+      </div>
+    </li>
+  </ul>
+</List>
 `;

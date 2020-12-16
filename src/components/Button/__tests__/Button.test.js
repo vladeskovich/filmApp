@@ -8,12 +8,10 @@ describe('Button', () => {
     color: 'blue',
     className: 'buttonTest',
   };
-  it('should render Button component without props', () => {
-    const component = mount(<Button>Ok</Button>);
-    expect(component).toMatchSnapshot();
-  });
+
   it('should render Button component with props', () => {
-    const component = mount(<Button {...props}>Ok</Button>);
+    const component = shallow(<Button {...props}>Ok</Button>);
+
     expect(component).toMatchSnapshot();
   });
 });

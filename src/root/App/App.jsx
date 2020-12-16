@@ -72,6 +72,7 @@ const App = ({
   const toogleDialogHandler = useCallback((event) => {
     const { target: { dataset: { itemId } } } = event;
     const newVisibleDialog = !visibleDialog;
+
     if (newVisibleDialog) {
       getVideos(itemId);
     }

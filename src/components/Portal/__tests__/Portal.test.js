@@ -13,6 +13,7 @@ describe('Portal', () => {
 
   it('should render Portal component', () => {
     const component = shallow(<Portal><div>Modal Window</div></Portal>);
+
     expect(component).toMatchSnapshot();
   });
 });

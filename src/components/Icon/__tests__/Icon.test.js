@@ -9,13 +9,13 @@ describe('Icon', () => {
   };
 
   it('should render Icon component', () => {
-    const component = mount(<Icon/>);
+    const component = shallow(<Icon/>);
 
     expect(component).toMatchSnapshot();
   });
 
   it('should render Icon component with props', () => {
-    const component = mount(<Icon {...props}/>);
+    const component = shallow(<Icon {...props}/>);
 
     expect(component).toMatchSnapshot();
   });

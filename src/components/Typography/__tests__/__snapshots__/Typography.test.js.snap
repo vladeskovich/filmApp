@@ -1,49 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Typography should call onClick method 1`] = `
+exports[`Typography should render Typography component with props 1`] = `
 <h1
   className="Typography__typography_1E76fqYp test-text"
-  onClick={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
 >
   Ok
 </h1>
 `;
 
-exports[`Typography should render Typography component with props 1`] = `
-<Typography
-  className="test-text"
-  onClick={[Function]}
-  variant="header1"
->
-  <h1
-    className="Typography__typography_1E76fqYp test-text"
-    onClick={[Function]}
-  >
-    Ok
-  </h1>
-</Typography>
-`;
-
 exports[`Typography should render Typography component without props 1`] = `
-<Typography
-  variant="body"
+<p
+  className="Typography__typography_1E76fqYp"
 >
-  <p
-    className="Typography__typography_1E76fqYp"
-  >
-    Ok
-  </p>
-</Typography>
+  Ok
+</p>
 `;

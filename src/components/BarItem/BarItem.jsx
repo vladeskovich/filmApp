@@ -15,6 +15,7 @@ const BarItem = ({
     <>
       <Input
         checked={checkedItem}
+        onChange={() => {}}
         type='radio'
         name={name}
         id={name}
