@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "react",
   "private": true,
+  "author": "Litvinko Vlad",
+  "license": "ISC",
   "scripts": {
-    "start": "webpack-dev-server --open --config ./config/webpack/development.js",
+    "start": "npm run server",
+    "start:dev": "webpack-dev-server --open --config ./config/webpack/development.js",
     "build": "webpack --config ./config/webpack/production.js",
     "test": "jest",
     "test:update": "jest -u",
     "server": "node server.js"
   },
-  "author": "Litvinko Vlad",
-  "license": "ISC",
+  "heroku-run-build-script": true,
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.10.4",

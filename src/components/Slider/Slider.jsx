@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SliderNavigation from '../SliderNavigation';
@@ -9,14 +9,25 @@ const mapStateToProps = (state) => ({
   films: state.films.films,
 });
 
+const NUMBER_SLIDES = 5;
+const DURATION_SLIDE = 7000;
+
 const Slider = ({
   films,
   onShow,
 }) => {
-  const dataSlide = films.slice(0, 5);
+  const dataSlide = films.slice(0, NUMBER_SLIDES);
   const [slide, setSlide] = useState(0);
 
-  // setTimeout(() => (slide < 4 ? setSlide(slide + 1) : setSlide(0)), 3000);
+  useEffect(() => {
+    const timeOutId = setTimeout(() => setSlide(
+      (prevSlide) => (prevSlide + 1) % NUMBER_SLIDES,
+    ), DURATION_SLIDE);
+
+    return () => {
+      clearTimeout(timeOutId);
+    };
+  }, [slide, setSlide]);
 
   return (
     <div className={styles.slider}>
