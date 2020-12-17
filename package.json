@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --open --config ./config/webpack/development.js",
     "build": "webpack --config ./config/webpack/production.js",
     "test": "jest",
-    "test:update": "jest -u"
+    "test:update": "jest -u",
+    "server": "node server.js"
   },
   "author": "Litvinko Vlad",
   "license": "ISC",
@@ -57,6 +58,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
+    "express": "^4.17.1",
     "jest-svg-transformer": "^1.0.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
