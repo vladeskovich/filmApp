@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import GridItem from '../GridItem';
 import Preloader from '../Preloader';
@@ -58,7 +57,5 @@ FilmList.propTypes = {
   displayType: PropTypes.string,
   onShow: PropTypes.func,
 };
-
-FilmList.defaultProps = {};
 
 export default connect(mapStateToProps, null)(FilmList);

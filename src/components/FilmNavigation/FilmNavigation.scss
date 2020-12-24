@@ -33,11 +33,6 @@
   }
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
-
 .orientationItem {
   display: flex;
   justify-content: space-between;
@@ -66,4 +61,23 @@
 
 .list.activeList {
   fill: $blue-main;
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navBarSort {
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+
+  .orientationItem {
+    flex-direction: column;
+    min-width: 20px;
+    min-height: 60px;
+    justify-content: space-between;
+  }
 }

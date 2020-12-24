@@ -63,4 +63,8 @@
   overflow: scroll;
   transition: all 0.45s ease;
   background-color: inherit;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -48,6 +48,4 @@ Slider.propTypes = {
   onShow: PropTypes.func,
 };
 
-Slider.defaultProps = {};
-
 export default connect(mapStateToProps, null)(Slider);

@@ -64,13 +64,13 @@
   color: $absolute-white;
   width: 100%;
   max-width: 400px;
-  max-height: 150px;
+  max-height: 100px;
   margin-bottom: 20px;
   text-indent: 20px;
   font-size: 17px;
   padding-top: 10px;
-}
 
-.watchNow {
-
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Button from '../Button';
 import Typography from '../Typography';
 import Genres from '../Genres';
@@ -15,10 +16,20 @@ const Slide = ({
   runtime,
   genres,
   onShow,
+  overview,
   id,
 }) => {
   const time = getTimeFromMin(runtime);
   const urlImage = imagePath + slideImage;
+  const mainGenres = genres.slice(0, 3);
+
+  const [showOverview, setShow] = useState(false);
+
+  const toogleOverviewHandler = useCallback(() => {
+    const newVisibleOverwiew = !showOverview;
+
+    setShow(newVisibleOverwiew);
+  }, [setShow, showOverview]);
 
   return (
     <div style={{
@@ -34,7 +45,7 @@ const Slide = ({
           <div className={styles.slideTitle}>
             <Typography className={styles.textTitle}>{titleFilm.toUpperCase()}</Typography>
           </div>
-          <Genres data={genres}/>
+          <Genres data={mainGenres}/>
           <div className={styles.wrapperRuntimeFilm}>
             <Typography className={styles.runtimeFilm}>
               | {time.hours}h {time.minutes}m
@@ -43,6 +54,11 @@ const Slide = ({
           <Rating rating={voteCount}/>
         </div>
         <div className={styles.slideButtons}>
+          <div
+            className={classNames(styles.filmOverview, { [styles.show]: showOverview })}
+          >
+            <Typography className={styles.textOverview}>{overview}</Typography>
+          </div>
           <Button
             data-item-id={id}
             onClick={onShow}
@@ -50,6 +66,7 @@ const Slide = ({
             outline
           >Watch Now</Button>
           <Button
+            onClick={toogleOverviewHandler}
             color='none'
             outline
           >View Info</Button>
